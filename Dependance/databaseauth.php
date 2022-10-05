@@ -1,19 +1,16 @@
 
 
-
 <?php
 
 //PHP pour se connecter à la base de donnée
 
-$url = getenv('JAWSDB_URL');
-$dbparts = parse_url($url);
+$db="uh8hmkbxnun65c7p";
+$dbhost="au77784bkjx6ipju.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+$dbport=3306;
+$dbuser="i7v6t4j8h5wmdz4r";
+$dbpasswd="ezcxruodepso3vpi";
 
-$hostname = $dbparts['host'];
-$username = $dbparts['user'];
-$password = $dbparts['pass'];
-$database = ltrim($dbparts['path'],'/');
-
-$auth = new PDO('mysql:host='.$hostname.';port='.$dbport.';dbname='.$database.'', $username, $password);
+$auth = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.'', $dbuser, $dbpasswd);
 
 
 if (!$auth) {
