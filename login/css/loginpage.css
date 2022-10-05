@@ -1,0 +1,793 @@
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+}
+
+.bodyloginblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+    margin-top: 2%;
+
+    
+}
+
+.logintext h1{
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    justify-self: center;
+    margin-top: 10%;
+}
+
+
+
+.loginblock {
+    width: 40%;
+    max-height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    background-color: rgba(214, 214, 214, 0.178);
+    flex-direction: column;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+
+    
+
+}
+
+.login-form input {
+
+    color: white;
+    width: 500px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+
+    
+    
+}
+
+
+.login-form input:focus {
+    outline: none;
+    border: 2px solid rgb(107, 185, 13);
+    overflow: hidden;
+    
+   
+    
+}
+
+
+.placeholder {
+    color: rgba(218, 218, 218, 0.781);
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    top: -65px;
+    right: -60px;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+    
+}
+
+::placeholder {
+    color: rgba(218, 218, 218, 0.781);
+
+}
+
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+
+
+
+.login-form button {
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 8%;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-left: 20%;
+}
+
+
+.login-form button:hover {
+
+
+    background-color: rgb(107, 185, 13);
+    color: gray;
+
+}
+
+
+.login-form input:focus ~ .placeholder {
+    top: -100px;
+    right: -60px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    margin-bottom: -5%;
+    
+}
+
+
+.material-symbols-outlined.loginpage {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    
+
+}
+
+
+#showpassword {
+    font-size: 1.4em;
+    color: white;
+    position: relative;
+    top: -65px;
+    right: -552px;
+    cursor: pointer;
+}
+
+
+
+.login-form input:focus ~ #showpassword {
+    color: rgb(157, 235, 63);
+    top: -75px;
+    
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.warningmessage {
+    color: rgb(255, 93, 93);
+    margin-bottom: -5%;
+    margin-top: 5%;
+    font-size: 1.1em;
+    font-style: italic;
+    position: relative;
+    left: 30px;
+    max-width: 100%;
+}
+
+/* Responsive pour téléphones */
+
+
+@media screen and (max-width: 760px) and (min-width: 200px) {
+    .bodyloginblock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    
+        
+    }
+    
+    .logintext h1{
+        color: white;
+        font-size: 3em;
+        text-align: center;
+        justify-self: center;
+        margin-top: 10%;
+    }
+    
+    
+    
+    .loginblock {
+        width: 100%;
+        max-height: 120%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(214, 214, 214, 0.178);
+        flex-direction: column;
+        border-radius: 10px;
+    
+    }
+    
+    
+    .login-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -8%;
+    
+        
+    
+    }
+    
+    .login-form input {
+    
+        color: white;
+        width: 300px;
+        height: 50px;
+        background-color: rgba(168, 168, 168, 0.281);
+        font-size: 1.2em;
+        border: 2px solid rgba(218, 218, 218, 0.781);   
+        border-radius: 10px;
+        padding-left: 25px;
+        margin-bottom: 5%;
+        margin-top: 10%;
+    
+        
+        
+    }
+    
+    
+    .login-form input:focus {
+        outline: none;
+        border: 2px solid rgb(107, 185, 13);
+        overflow: hidden;
+        
+       
+        
+    }
+    
+    
+    .placeholder {
+        color: rgba(218, 218, 218, 0.781);
+        position: relative;
+        font-size: 1em;
+        font-weight: 500;
+        top: -65px;
+        right: -60px;
+        pointer-events: none;
+        cursor: default;
+        display: none;
+        
+    }
+    
+    ::placeholder {
+        color: rgba(218, 218, 218, 0.781);
+    
+    }
+    
+    
+    input:focus::placeholder {
+        color: transparent;
+      }
+    
+    
+    
+    
+    .login-form button {
+    
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        font-size: 1.5em;
+        margin-bottom: 8%;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-left: 18%;
+    }
+    
+    
+    .login-form button:hover {
+    
+    
+        background-color: rgb(107, 185, 13);
+        color: gray;
+    
+    }
+    
+    
+
+
+    .login-form input:focus ~ .placeholder {
+        top: -10px;
+        right: -80px;
+        color:rgb(107, 185, 13);
+        transition: top .8s;
+        display: flex;
+        
+    }
+    
+
+
+
+
+
+
+
+
+    
+    .material-symbols-outlined.loginpage {
+        font-size: 2.5em;
+        color: white;
+        position: relative;
+        top: -40px;
+        right: -170px;
+    
+    }
+    
+    
+    #showpassword {
+        font-size: 1.8em;
+        color: white;
+        position: relative;
+        top: -60px;
+        right: -360px;
+        cursor: pointer;
+    }
+    
+    
+    
+    .login-form input:focus ~ #showpassword {
+        color: rgb(157, 235, 63);
+        top: -80px;
+        
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .warningmessage {
+        color: rgb(255, 93, 93);
+        margin-bottom: -5%;
+        margin-top: 5%;
+        font-size: 1.1em;
+        font-style: italic;
+        position: relative;
+        left: 50px;
+        max-width: 80%;
+    }
+    
+    
+}
+
+/* Responsive pour petites et moyenne tablettes */
+
+@media screen and (max-width: 1020px) and (min-width: 760px) {
+    .bodyloginblock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    
+        
+    }
+    
+    .logintext h1{
+        color: white;
+        font-size: 4em;
+        text-align: center;
+        justify-self: center;
+        margin-top: 10%;
+    }
+    
+    
+    
+    .loginblock {
+        width: 90%;
+        max-height: 120%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+        background-color: rgba(214, 214, 214, 0.178);
+        flex-direction: column;
+        border-radius: 10px;
+    
+    }
+    
+    
+    .login-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10%;
+
+    
+        
+    
+    }
+    
+    .login-form input {
+    
+        color: white;
+        width: 500px;
+        height: 50px;
+        background-color: rgba(168, 168, 168, 0.281);
+        font-size: 2em;
+        border: 2px solid rgba(218, 218, 218, 0.781);   
+        border-radius: 10px;
+        padding-left: 25px;
+        margin-bottom: 5%;
+        margin-top: 2%;
+    
+        
+        
+    }
+    
+    
+    .login-form input:focus {
+        outline: none;
+        border: 2px solid rgb(107, 185, 13);
+        overflow: hidden;
+        
+       
+        
+    }
+    
+    
+    .placeholder {
+        color: rgba(218, 218, 218, 0.781);
+        position: relative;
+        font-size: 1.5em;
+        font-weight: 500;
+        top: -65px;
+        right: -60px;
+        pointer-events: none;
+        cursor: default;
+        display: none;
+        
+    }
+    
+    ::placeholder {
+        color: rgba(218, 218, 218, 0.781);
+    
+    }
+    
+    
+    input:focus::placeholder {
+        color: transparent;
+      }
+    
+    
+    
+    
+    .login-form button {
+    
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        font-size: 2.5em;
+        margin-bottom: 8%;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-left: 18%;
+    }
+    
+    
+    .login-form button:hover {
+    
+    
+        background-color: rgb(107, 185, 13);
+        color: gray;
+    
+    }
+    
+    
+    .login-form input:focus ~ .placeholder {
+        top: -110px;
+        right: -60px;
+        color:rgb(107, 185, 13);
+        transition: top .8s;
+        display: flex;
+        margin-bottom: -5%;
+        
+    }
+    
+    
+    .material-symbols-outlined.loginpage {
+        font-size: 2.5em;
+        color: white;
+        position: relative;
+        top: 10px;
+        right: 10px;
+    
+    }
+    
+    
+    #showpassword {
+        font-size: 2em;
+        color: white;
+        position: relative;
+        top: -75px;
+        right: -552px;
+        cursor: pointer;
+    }
+    
+    
+    
+    .login-form input:focus ~ #showpassword {
+        color: rgb(157, 235, 63);
+        top: -90px;
+        
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .warningmessage {
+        color: rgb(255, 93, 93);
+        margin-bottom: -5%;
+        margin-top: 5%;
+        font-size: 1.1em;
+        font-style: italic;
+        position: relative;
+        left: 30px;
+        max-width: 70%;
+    }
+    
+
+
+}
+
+
+
+/* Responsive pour larges tablettes */
+
+@media screen and (max-width: 1280px) and (min-width: 1020px) {
+
+    .bodyloginblock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    
+        
+    }
+    
+    .logintext h1{
+        color: white;
+        font-size: 3em;
+        text-align: center;
+        justify-self: center;
+        margin-top: 10%;
+    }
+    
+    
+    
+    .loginblock {
+        width: 60%;
+        max-height: 120%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+        background-color: rgba(214, 214, 214, 0.178);
+        flex-direction: column;
+        border-radius: 10px;
+    
+    }
+    
+    
+    .login-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 3%;
+    
+        
+    
+    }
+    
+    .login-form input {
+    
+        color: white;
+        width: 500px;
+        height: 50px;
+        background-color: rgba(168, 168, 168, 0.281);
+        font-size: 1.2em;
+        border: 2px solid rgba(218, 218, 218, 0.781);   
+        border-radius: 10px;
+        padding-left: 25px;
+        margin-bottom: 5%;
+        margin-top: 2%;
+    
+        
+        
+    }
+    
+    
+    .login-form input:focus {
+        outline: none;
+        border: 2px solid rgb(107, 185, 13);
+        overflow: hidden;
+        
+       
+        
+    }
+    
+    
+    .placeholder {
+        color: rgba(218, 218, 218, 0.781);
+        position: relative;
+        font-size: 1em;
+        font-weight: 500;
+        top: -65px;
+        right: -60px;
+        pointer-events: none;
+        cursor: default;
+        display: none;
+        
+    }
+    
+    ::placeholder {
+        color: rgba(218, 218, 218, 0.781);
+    
+    }
+    
+    
+    input:focus::placeholder {
+        color: transparent;
+      }
+    
+    
+    
+    
+    .login-form button {
+    
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        font-size: 2em;
+        margin-bottom: 8%;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-left: 25%;
+    }
+    
+    
+    .login-form button:hover {
+    
+    
+        background-color: rgb(107, 185, 13);
+        color: gray;
+    
+    }
+    
+    
+    .login-form input:focus ~ .placeholder {
+        top: -100px;
+        right: -60px;
+        color:rgb(107, 185, 13);
+        transition: top .8s;
+        display: flex;
+        margin-bottom: -5%;
+        
+    }
+    
+    
+    .material-symbols-outlined.loginpage {
+        font-size: 2.5em;
+        color: white;
+        position: relative;
+        top: 10px;
+        right: 10px;
+    
+    }
+    
+    
+    #showpassword {
+        font-size: 2em;
+        color: white;
+        position: relative;
+        top: -70px;
+        right: -552px;
+        cursor: pointer;
+    }
+    
+    
+    
+    .login-form input:focus ~ #showpassword {
+        color: rgb(157, 235, 63);
+        top: -80px;
+        
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .warningmessage {
+        color: rgb(255, 93, 93);
+        margin-bottom: 2%;
+        margin-top: 5%;
+        font-size: 1.1em;
+        font-style: italic;
+        position: relative;
+        left: 30px;
+        max-width: 70%;
+    }
+    
+
+}

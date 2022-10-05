@@ -1,0 +1,288 @@
+/* CSS POUR LA PAGE DE HUB ADMINISTRATEUR, PERMETTANT DE NAVIGUER ENTRE LES PAGES */
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+    
+}
+
+main {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hubbody {
+    border-radius: 10px;
+    margin-top: 3%;
+    background-color: rgba(234, 234, 234, 0.178);
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+
+    font-size: 1em;
+
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    max-width: 50%;
+
+    
+    
+}
+
+
+
+.hubbody:hover {
+    border: 2px solid rgb(107, 185, 13);
+
+}
+
+
+.hubbody h1 {
+    color: white;
+    font-size: 4em;
+    justify-self: center;
+    
+}
+
+.hubbody:hover h1 {
+    color: rgb(157, 235, 63);
+    
+    
+}
+
+
+.buttonblock {
+    margin-top: -10%
+}
+
+.Hubblock {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 80%;
+    text-align: center;
+
+
+}
+
+
+#icon {
+    position: relative;
+    right: 40px;
+    top: 8px;
+    overflow: hidden;
+
+}
+
+#icon {
+    font-size: 4em;
+    color: white;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    
+
+}
+
+
+
+.Hubblock a {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 1.8em;
+    margin-bottom: 10%;
+    margin-top: 15%;
+    justify-self: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 50%;
+
+  }
+  
+.Hubblock a:hover {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(107, 185, 13);
+    color: gray;
+    font-size: 1.8em;
+    margin-bottom: 10%;
+    margin-top: 15%;
+    justify-self: center;
+    text-align: center;
+    
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 50%;
+  }
+
+  /* Responsive pour téléphones */
+  @media screen and (max-width: 760px) and (min-width: 200px) {
+  
+
+    main {
+        margin-bottom: 5%;
+        margin-top: 5%;
+        justify-self: center;
+        
+    }
+    
+    
+    .hubbody {
+        border-radius: 10px;
+        margin-top: 3%;
+        background-color: rgba(234, 234, 234, 0.178);
+        border: 2px solid rgba(218, 218, 218, 0.781);   
+    
+        font-size: 1em;
+    
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        max-width: 100%;
+        margin-bottom: 40%;
+        margin-top: 10%;
+        
+        
+    }
+    
+    
+    
+    .hubbody:hover {
+        border: 2px solid rgb(107, 185, 13);
+    
+    }
+    
+    
+    .hubbody h1 {
+        color: white;
+        font-size: 2em;
+        justify-self: center;
+        
+    }
+    
+    .hubbody:hover h1 {
+        color: rgb(157, 235, 63);
+        
+        
+    }
+    
+    
+    .buttonblock {
+        margin-top: -10%
+    }
+    
+    .Hubblock {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 80%;
+        text-align: center;
+        align-content: center;
+    
+    
+    }
+    
+    
+    #icon {
+        position: relative;
+        right: 40px;
+        top: 8px;
+        overflow: hidden;
+    
+    }
+    
+
+    
+    #icon {
+        display: none;
+    }
+    
+    
+    .Hubblock a {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        font-size: 1em;
+        margin-bottom: 10%;
+        margin-top: 15%;
+        justify-self: center;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        max-width: 80%;
+    
+      }
+      
+    .Hubblock a:hover {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(107, 185, 13);
+        color: gray;
+        font-size: 1em;
+        margin-bottom: 10%;
+        margin-top: 15%;
+        justify-self: center;
+        text-align: center;
+        
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        max-width: 80%;
+      }
+
+
+
+}
+
+  /* Responsive pour petites, moyennes et larges tablettes */
+
+@media screen and (max-width: 1281px) and (min-width: 760px) {
+    .hubbody {
+        border-radius: 10px;
+        margin-top: 3%;
+        background-color: rgba(234, 234, 234, 0.178);
+        border: 2px solid rgba(218, 218, 218, 0.781);   
+    
+        font-size: 1em;
+    
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        max-width: 90%;
+    
+        
+        
+    }
+}

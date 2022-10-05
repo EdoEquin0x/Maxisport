@@ -1,0 +1,94 @@
+Sécu mises en places: Mdp crypté, vérification de permission à chaque page, nombreuses vérifs lors de la connexion 
+Page d'installation à usage unique
+
+
+
+------| Responsive |------- 
+
+
+Page d'introduction à l'installation admin:  x 
+Page d'installation admin:  x
+Page d'introduction au changement de mdp: x
+page de modification de mdp: x
+Page index: x 
+Page Offre: x 
+Page contact: x 
+Page Connexion: x 
+HUB admin: x 
+Liste des franchises: x 
+Liste des établissements: x 
+Page de validation pour chaque action: x 
+Page de modif des franchises: x
+Page de modif des établissements: x
+Page de création des franchises: x
+Page de création des établissements: x
+Page read only des franchises: x
+Page read only des établissements: x
+Refaire la page de login x
+Faire le footer x
+Refaire la page de contact et corriger son envois de mail x
+
+
+------
+
+
+
+------| Test interface |------- 
+
+Page d'introduction à l'installation admin: x
+Page d'installation admin: x
+Page d'introduction au changement de mdp: x
+page de modification de mdp: x
+Page index: x
+Page Offre: x
+Page contact: x
+Page Connexion: x
+HUB admin: x
+Liste des franchises: x
+Liste des établissements: x
+Page de validation pour chaque action: x
+Page de modif des franchises: x
+Page de modif des établissements: 
+Page de création des franchises: x
+Page de création des établissements: x
+Page read only des franchises: x
+Page read only des établissements: x
+
+
+
+
+------
+
+
+------| Test Fonctionnalités |------- 
+
+
+Setup Admin: x
+
+Barre de recherche franchise: x
+Barre de recherche établissement: x
+
+Créer une franchise: x
+Créer un établissement: x
+
+Modifier une franchise: x
+Modifier un établissement: x 
+ 
+Supprimer une franchise: x
+Supprimer une établissement: x
+
+
+Changement de mot de passe a la première connexion: x
+
+Se connecter: x
+
+
+Envoie systématique des mails: x
+
+
+
+
+
+------
+
+Commenter le code: x

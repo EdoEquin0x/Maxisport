@@ -1,0 +1,918 @@
+
+
+/* CSS DE LA PAGE D'EDITION DES ETABLISSEMENTS */
+
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+
+/* CSS de base de la page */
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+}
+
+
+main {
+  width: 80%;
+  margin-left: 10%;
+
+}
+
+
+.slideranimationbarmiddle {
+    background-color: rgba(214, 214, 214, 0.178);
+    text-indent: 100%;
+    max-width: 50%;
+    margin-left: 25%;
+    animation: AppearfromUp2 1.2s ease-in-out;
+    font-size: 0.005em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+
+
+/* CSS de base des boutons sur la page, pour gérer les permissions */ 
+  label.switch {  
+    text-align: left;
+    width: 4em;
+    height: 2em;
+    border-radius:60px;   
+    background-color:rgb(187, 255, 93);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  label.switch > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  label.switch > input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+  } 
+  label.switch > span:before, label.switch > span:after {
+    content: "";
+    cursor: pointer;
+    position: absolute;
+  }
+  label.switch > input[type="checkbox"]:focus ~ span {
+    box-shadow: 0 0 0 4px rgba(252, 190, 190, 0.4);
+  }
+  label.switch > input[type="checkbox"]:checked:focus ~ span {
+    box-shadow: 0 0 0 4px rgba(226, 252, 190, 0.4);
+  }
+  label.switch > span {
+    border-radius: 60px;  
+  }
+  label.switch > span:before {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgb(255, 93, 93);
+    border-radius: 60px;
+    transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+    transform: scale(1);
+    opacity: 1;
+  }
+  label.switch > span:after{
+    top: 50%;
+    z-index: 3;
+    transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
+    width: 2em;
+    height: 2em;
+    transform: translate3d(0, -50%, 0);
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
+  }
+
+
+
+
+ 
+/* CSS de l'activation de ces boutons, pour permettre au tout d'être fluide et estéthiques */
+  label.switch > input[type="checkbox"]:checked ~ span:before {
+    transform: scale(0);
+    opacity: .7;
+  }
+  label.switch > input[type="checkbox"]:checked ~ span:after {
+    transform: translate3d(100%, -50%, 0);
+  }
+
+
+
+
+
+  /* CSS des boites basiques de la page */
+  .pannelcheckfranchisebody {
+    justify-self: center;
+    
+    
+  }
+
+  .pannelcheckfranchiseblock {
+    background-color: rgba(214, 214, 214, 0.178);
+    margin-top: 10%;
+  }
+
+
+
+  .pannelcheckfranchise {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+    ". pannelmainblock ."
+    ". pannelinfoblock ."
+    ". . .";
+  }
+
+
+
+  /* En-tête de la page, donc la grande image et le titre */
+
+.pannelmainblock {
+    grid-area: pannelmainblock;
+    margin-top: 5%;
+    margin-left: -5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.franchisename h1 {
+    font-size: 4em;
+    font-weight: bolder;
+    color: rgb(157, 235, 63);
+  }
+
+
+.pannelpicture {
+    justify-self: center;
+  }
+
+
+  /* CSS des boites de la page contenant les champ de texte */
+
+
+  .pannelinfoblock {
+    grid-area: pannelinfoblock;
+    margin-top: 10%;
+    background-color: rgba(214, 214, 214, 0.178);
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    margin-left: -5%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+.establish-edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+
+    
+
+}
+
+.establish-edit-form h3 {
+  color: rgb(209, 195, 195);
+  font-size: 3em;
+  margin-bottom: 10%;
+  margin-left: 20%; 
+
+}
+
+.establish-edit-form input {
+    color: white;
+    width: 450px;
+    height: 60px;
+    margin-top: 5%;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    padding-left: 25px;
+
+    
+    
+}
+
+::placeholder {
+    color: rgba(218, 218, 218, 0.781);
+
+
+}
+
+.establish-edit-form button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 8%;
+    margin-top: 5%;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 80%;
+}
+
+
+.establish-edit-form h4 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+}
+
+.switch {
+    margin-left: 42%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    
+}
+  /* CSS des boites de la page contenant les boutons et les informations qui leurs sont relatives */
+
+  .pannelbuttonblock {
+    grid-area: pannelbuttonblock;
+    margin-top: 20%;
+    background-color: rgba(214, 214, 214, 0.178);
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    justify-content: center;
+    align-items: center;
+     
+
+
+  }
+
+
+
+  .parameterbox {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: -2%;
+    border: rgba(226, 252, 190, 0.4) 5px outset;
+  }
+
+
+
+button:hover {
+  background-color: rgba(158, 235, 63, 0.541);
+  color: gray;
+
+}
+
+
+.franchiseid {
+    display: none;
+}
+
+.establishid {
+  display: none;
+}
+
+.establishName {
+  display: none;
+}
+
+
+
+
+
+
+.franchise-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5%;
+  
+
+
+  
+
+}
+
+
+
+.franchise-edit-form h2 {
+  justify-self: center;
+  color: white;
+  font-size: 3em;
+
+  margin-top: 8%;
+  margin-bottom: 6%;
+
+
+}
+
+.franchise-edit-form select {
+  color: white;
+  width: 500px;
+  height: 50px;
+  background-color: rgba(168, 168, 168, 0.281);
+  font-size: 1.2em;
+  border: 2px solid rgba(218, 218, 218, 0.781);   
+  border-radius: 0px;
+
+  padding-left: 25px;
+  margin-bottom: 5%;
+  margin-top: 2%;
+  cursor: pointer;
+  appearance: none;
+}
+
+
+
+.franchise-edit-form option {
+  color:white;
+  background-color: rgb(98, 98, 98);
+  border: 0.5px solid rgba(218, 218, 218, 0.781);   
+  font-size: 1.2em;
+
+}
+
+.franchise-edit-form select:focus {
+  border: 2px solid rgb(107, 185, 13);
+}
+
+.franchise-edit-form input {
+
+  color: white;
+  width: 500px;
+  height: 50px;
+  background-color: rgba(168, 168, 168, 0.281);
+  font-size: 1.2em;
+  border: 2px solid rgba(218, 218, 218, 0.781);   
+  border-radius: 10px;
+  padding-left: 25px;
+  margin-bottom: 5%;
+  margin-top: 2%;
+
+  
+  
+}
+
+
+.franchise-edit-form input:focus {
+  outline: none;
+  border: 2px solid rgb(107, 185, 13);
+  overflow: hidden;
+  
+ 
+  
+}
+
+
+.placeholder {
+  color: rgba(218, 218, 218, 0.781);
+  position: relative;
+  font-size: 1em;
+  font-weight: 500;
+  top: -65px;
+  right: -60px;
+  pointer-events: none;
+  cursor: default;
+  display: none;
+  
+}
+
+::placeholder {
+  color: rgba(218, 218, 218, 0.781);
+
+}
+
+.likeplaceholder option {
+  
+
+}
+
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+
+
+
+.franchise-edit-form button {
+
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(157, 235, 63);
+  color: white;
+  font-size: 2.2em;
+  margin-bottom: 2%;
+  margin-top: 10%;
+  justify-self: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+
+.franchise-edit-form button:hover {
+
+
+  background-color: rgb(107, 185, 13);
+  color: gray;
+
+}
+
+
+.franchise-edit-form input:focus ~ .placeholder {
+  top: -100px;
+  right: -60px;
+  color:rgb(107, 185, 13);
+  transition: top .8s;
+  display: flex;
+  
+}
+
+.franchise-edit-form select:focus ~ .placeholder {
+  top: -100px;
+  right: -60px;
+  color:rgb(107, 185, 13);
+  transition: top .8s;
+  display: flex;
+  
+}
+
+.material-symbols-outlined.pannelicon {
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  
+
+}
+
+.permissioncontainer {
+  justify-content: center;
+  margin-bottom: 10%;
+
+}
+
+.permissioncontainer h3 {
+  color: white;
+  font-size: 2em;
+  margin-left: 35%;
+
+    
+}
+
+.infotextcontainer {
+  color: white;
+  font-size: 3em;
+  margin-left: 25%;
+
+
+    
+}
+
+.permissioncontainer h4 {
+  color: rgba(218, 218, 218, 0.781);
+  font-size: 1.5em;
+  margin-top: 2%;
+  margin-left: 38%;
+
+}
+
+.franchiseimg {
+  border-radius: 15px;
+  border: rgba(218, 218, 218, 0.781) 10px solid;
+}
+
+
+
+.permissioncontainer {
+  margin-top: 20%;
+  border: rgba(218, 218, 218, 0.781) 2px solid;
+
+  background-color: rgba(234, 234, 234, 0.178);
+
+  
+  
+}
+
+
+.permissioncontainer:hover p {
+  color: white;
+
+  
+
+}
+
+.permissioncontainer:hover h4 {
+  color: white;
+
+  
+
+}
+
+.permissioncontainer:hover {
+  border: 2px solid rgb(107, 185, 13);
+
+  
+
+}
+
+
+.backbutton {
+  justify-self: center;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 93, 93);
+  color: white;
+  margin-left: 37%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 2em;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 10%;
+}
+
+.backbutton:hover {
+    justify-self: center;
+    border: none;
+    margin-left: 37%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    background-color: rgb(205, 43, 43);
+    color: gray;
+    font-size: 2em;
+    justify-self: center;
+    text-align: center;
+    
+
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 10%;
+}
+
+
+
+#showpassword {
+  font-size: 1.4em;
+  color: white;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+
+
+.franchise-edit-form input:focus ~ #showpassword {
+  font-size: 1.4em;
+  color: rgb(157, 235, 63);
+  position: relative;
+  top: -90px;
+  right: -555px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+/* Responsive pour téléphones */
+@media screen and (max-width: 760px) and (min-width: 200px) {
+  .franchise-edit-form input {
+
+    color: white;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+
+    
+    
+  }
+  .pannelinfoblock {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    font-size: 1em;
+    max-width: 80%;
+    text-align: center;
+    margin-left: 8%;
+    margin-top: -20%;
+    margin-bottom: -30%;
+  }
+
+
+
+  
+
+  #showpassword {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: -60px;
+    right: -150px;
+  
+    cursor: pointer;
+  }
+  
+  
+  
+  .franchise-edit-form input:focus ~ #showpassword {
+    font-size: 2em;
+    color: rgb(157, 235, 63);
+    position: relative;
+    top: -80px;
+    right: -150px;
+    cursor: pointer;
+  
+  }
+
+  .franchise-edit-form input:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+.franchise-edit-form select:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+
+  .placeholder {
+    color: rgba(218, 218, 218, 0.781);
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    top: -65px;
+    right: -60px;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+    
+}
+
+  .pannelcheckfranchise {
+    width: 100%;
+  }
+  .pannelcheckfranchiseblock {
+    width: 100%;
+  }
+
+  main {
+    width: 120%;
+    margin-left: -10%;
+    background-color: rgba(214, 214, 214, 0.178);
+
+  }
+
+  .pannelcheckfranchiseblock {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+
+  .franchiseimg {
+    max-width: 198px;
+    max-height: 198px;
+  }
+
+
+  .pannelmainblock {
+    margin-left: -10%;
+  }
+
+.infotextcontainer {
+  margin-left: -5%;
+  font-size: 2em;
+}
+
+  .backbutton {
+    margin-left: 30%;
+  }
+  .backbutton:hover {
+    margin-left: 30%;
+  }
+
+
+  .permissioncontainer h4 {
+    margin-left: -5%;
+  }
+  .permissioncontainer label {
+    margin-left: -5%;
+  }
+
+
+  .franchisename {
+    font-size: 0.5em;
+  }
+}
+
+/* Responsive pour tablettes */
+@media screen and (max-width: 1281px) and (min-width: 760px) {
+
+  .franchise-edit-form input {
+
+    color: white;
+    width: 600px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+
+    
+    
+  }
+  .pannelinfoblock {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    font-size: 1.2em;
+    max-width: 80%;
+    text-align: center;
+    margin-left: 8%;
+    margin-top: -20%;
+    margin-bottom: -30%;
+  }
+
+
+
+  
+
+  #showpassword {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: -80px;
+    right: -300px;
+  
+    cursor: pointer;
+  }
+  
+  
+  
+  .franchise-edit-form input:focus ~ #showpassword {
+    font-size: 2em;
+    color: rgb(157, 235, 63);
+    position: relative;
+    top: -100px;
+    right: -300px;
+    cursor: pointer;
+  
+  }
+
+  .franchise-edit-form input:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+.franchise-edit-form select:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+
+  .placeholder {
+    color: rgba(218, 218, 218, 0.781);
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    top: -65px;
+    right: -60px;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+    
+}
+
+  .pannelcheckfranchise {
+    width: 100%;
+  }
+  .pannelcheckfranchiseblock {
+    width: 100%;
+  }
+
+  main {
+    width: 120%;
+    margin-left: -10%;
+    background-color: rgba(214, 214, 214, 0.178);
+
+  }
+
+  .pannelcheckfranchiseblock {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+
+  .franchiseimg {
+    max-width: 256px;
+    max-height: 256px;
+  }
+
+
+  .pannelmainblock {
+    margin-left: -10%;
+  }
+
+.infotextcontainer {
+  margin-left: -5%;
+  font-size: 2em;
+}
+
+  .backbutton {
+    margin-left: 35%;
+  }
+  .backbutton:hover {
+    margin-left: 35%;
+  }
+
+
+  .permissioncontainer h4 {
+    margin-left: -5%;
+  }
+  .permissioncontainer label {
+    margin-left: -5%;
+  }
+
+
+  .franchisename {
+    font-size: 1.5em;
+    margin-bottom: 10%;
+  }
+
+
+  .permissioncontainer {
+    min-height: 8%;
+  }
+
+  .franchise-edit-form button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 2.2em;
+    position: relative;
+    top: 1000px;
+    left: -470px;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 80%;
+}
+
+
+
+
+
+}

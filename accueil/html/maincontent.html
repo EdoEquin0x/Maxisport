@@ -1,0 +1,182 @@
+<!-- Import du framework chart js, qui permet de faciliter la création de graphiques -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<!-- Contenu de la page -->
+
+<body>
+    
+
+    <main>
+
+        <div class="wrapper">
+            <div class="becomeblock">
+                <div class="becomepic">
+                    <img src="images/imagepartenariat.jpg" alt="image de présentation" class="presentationpic">
+                </div>
+                <div class="becometext">
+                    <h1>Devenir franchisé chez Maxisport</h1>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div>
+                
+            </div>
+        
+            <span></span>
+
+            <div class="slideranimationbarmiddle">
+                <p>-</p>
+            </div>
+            <span></span>
+
+            <div class="criteriablock">
+               
+                <div class="criteriatext">
+                    <h1>Les critères pour un franchisage</h1>
+                    <ul>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                        <li>Lorem Ipsum</li>
+                    </ul>
+                </div>
+                <div class="criteriapic">
+                    <img src="images/whiteroom.jpg" alt="image de présentation" class="presentationpic2">
+                </div>
+
+                
+                
+            </div>
+            <div class="slideranimationbarmiddle">
+                <p>-</p>
+            </div>
+             <div class="chartblock">
+                <div class="somenumbers">
+                    <h1>Chiffres clés</h1>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div>
+           
+                <div class="chartblock">
+                    <canvas id="chart"></canvas>
+                
+                    <!-- style="width:100%;max-width:600px;position: relative;" -->
+                    <script>
+                        var xValues = ["Dragon-Boxing", "Dragon-Boxing", "Gorilla-Sport", "Gorilla-Sport", "Gigathlon", "Gigathlon", "EcnaMusculation", "EcnaMusculation"];
+                        var yValues = [53, 68, 31, 55, 14, 32, 24, 39];
+                        var barColors = ["lightgrey", "rgb(187, 255, 93)", "lightgrey", "rgb(187, 255, 93)", "lightgrey", "rgb(187, 255, 93)", "lightgrey", "rgb(187, 255, 93)"];
+                    
+                        new Chart("chart", {
+                        type: "bar",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                            }]
+                        },
+                        options: {
+                            legend: {display: false},
+                            title: {
+                            display: true,
+                            text: "Revenus avant et après le franchisage (en milliers d'euros)"
+                                }
+                        }
+                        });
+
+
+
+
+    
+
+
+                    </script>
+            
+             </div>
+            </div>
+            <div class="slideranimationbarmiddle">
+                <p>-</p>
+            </div>
+            
+            <h1 class="theytrustedus">Ils nous font confiance</h1>
+            <div class="trustcard">
+                <div class="card">
+                    <div class="content">
+                        <p>
+                            « Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. »</p>
+                            <div class="image">
+                                <img src="images/istockphoto-941965574-1024x1024.jpg">
+                            </div>
+                            <div class="details">
+                                <h2>EcnaMusculation<br><span>Franchisés depuis 2020</span></h2>
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <p>
+                            « Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. »</p>
+                            <div class="image">
+                                <img src="images/gorilla-sport-logo_94073-36.jpg">
+                            </div>
+                            <div class="details">
+                                <h2>Gorilla-Sport<br><span>Franchisés depuis 2018</span></h2>
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <p>
+                            « Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. »</p>
+                            <div class="image">
+                                <img src="images/images.jpg">
+                            </div>
+                            <div class="details">
+                                <h2>Dragon-Boxing<br><span>Franchisés depuis 2021</span></h2>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </main>
+
+
+
+</body>

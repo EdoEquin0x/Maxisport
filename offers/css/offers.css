@@ -1,0 +1,147 @@
+/* CSS DE LA PAGE LISTANT LES OFFRES DE MAXISPORT */
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+}
+
+
+
+.bodyofferlock{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+
+.offerblock {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+
+}
+
+
+
+
+.offer1, .offer2, .offer3 {
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    background-color: rgba(168, 168, 168, 0.281);
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 130%;
+
+}
+
+
+.offer1 h2, .offer2 h2, .offer3 h2 {
+    margin-top: 5%;
+    font-size: 1.8em;
+    color: white;
+
+
+}
+
+.offer1 p, .offer2 p, .offer3 p {
+    font-size: 1.5em;
+    color: white;
+
+
+}
+
+
+.bar {
+    font-size: 0.05em;
+    transition: all 0.5s ease;
+    background-color: rgba(187, 255, 93, 0418);
+    text-indent: 100%;
+    height: 1%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Responsive pour téléphone */
+@media screen and (max-width: 760px) and (min-width: 200px) {
+
+
+
+    .offerblock {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+    
+    
+    }
+
+
+    .offer1, .offer2, .offer3 {
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    background-color: rgba(168, 168, 168, 0.281);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+
+}
+.bar {
+    font-size: 0.02em;
+    transition: all 0.5s ease;
+    background-color: rgba(187, 255, 93, 0418);
+    text-indent: 100%;
+    height: 0.5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+}
+
+
+/* Responsive pour petite et moyenne tablette */
+
+@media screen and (max-width: 1020px) and (min-width: 760px) {
+
+    .offerblock {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+    
+    
+    }
+
+
+    .offer1, .offer2, .offer3 {
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    background-color: rgba(168, 168, 168, 0.281);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+
+}
+
+
+}
+
+

@@ -1,0 +1,106 @@
+Fonctionnalité : Première Authentification
+Cas de figure: Administrateur
+Scénario: J'installe le projet terminé, la base de donnée ne contiens aucune information utilisateur
+J'arrive donc sur une page pour initialiser un profil utilisateur, que j'appellerai "Admin"
+Le choix du mot de passe étant libre je renseigne mon mot de passe
+Je suis alors redirigé vers la page d'acceuil, depuis laquelle je vais me connecter avec ces nouveaux identifiants
+
+Fonctionnalité : Authentification
+Cas de figure: Administrateur
+Scénario : Tentative d'authentification avec un compte valide
+Je saisis mon login « admin » dans le champ « Utilisateur »
+Je saisis mon mot de passe dans le champ « Mot de passe »
+Je clique sur le bouton « Connexion » du formulaire
+Alors je suis authentifié sur le site
+Et je suis redirigé vers le pannel de gestion des franchises
+
+
+Fonctionnalité : Création d'une franchise
+Requiert: Authentifié en tant qu'Administrateur
+Scénario: Je clique sur le bouton « Ajouter »
+Étant donné que je possède les droits administrateurs, la création est validée et je peux passer à l'étape de renseignement des champs
+Une fois les champs rempli je clique sur valider, une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », la franchise est donc ajouté à mon système et ces derniers reçoivent un mail automatique avec un mot de passe généré
+
+
+Fonctionnalité : Supression d'une franchise
+Requiert: Authentifié en tant qu'Administrateur
+Scénario: Je clique sur une franchise se situant dans la liste des franchises elle même situé dans le pannel admin
+Je clique sur le bouton « Supprimer ». Une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », la franchise est donc retirée du système
+Un mail automatique est envoyé au client et à la franchise en guise de trace écrite
+
+
+Fonctionnalité : Edition d'une franchise
+Requiert: Authentifié en tant qu'Administrateur
+Scénario: Je clique sur une franchise se situant dans la liste des franchises elle même situé dans le pannel admin
+Je clique sur le bouton « Modifier ». Un formulaire s'ouvre
+Dans ce formulaire sont situées toutes les informations sur une franchise, qui ont été définies lors de sa création
+Je fait mes modifications
+Je clique sur le bouton « Appliquer ». Une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », mes modifications sont enregistrées 
+Un mail automatique est envoyé au client et à la franchise en guise de trace écrite
+
+
+
+
+
+
+
+
+
+Fonctionnalité : Première Authentification
+Cas de figure: Franchise
+Scénario : Tentative d'authentification avec un compte valide
+Je saisis mon login, qui est mon adresse mail, dans « Utilisateur »
+Je saisis mon mot de passe fournis par email dans « Mot de passe »
+Je clique sur le bouton « Connexion » du formulaire
+Alors je suis authentifié sur le site
+Une fenêtre de changement de mot de passe s'ouvre
+Je renseigne mon nouveau mot de passe
+Je clique sur « Appliquer »
+Une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer »
+Et je suis redirigé vers le pannel de gestion des établissements
+
+
+Fonctionnalité : Création d'un établissement
+Requiert: Authentifié en tant que franchise
+Scénario: Je clique sur le bouton « Ajouter »
+Si je possède la persmission d'en créer, la création est validée et je peux passer à l'étape de renseignement des champs
+Une fois les champs rempli je clique sur valider, une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », l'établissement est donc créer, il héritera par défaut des mêmes modules que moi
+
+
+Fonctionnalité : Supression d'un établissement
+Requiert: Authentifié en tant que franchise
+Scénario: Je clique sur un établissement se situant dans la liste des établissement qui est lui même situé dans mon pannel perso
+Je clique sur le bouton « Supprimer ». Une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », l'établissement est donc retirée de ma franchise
+Un mail automatique est envoyé au client et à la franchise en guise de trace écrite
+
+
+Fonctionnalité : Edition d'un établissement
+Requiert: Authentifié en tant que franchise
+Scénario: Je clique sur un établissement se situant dans la liste des établissement qui est lui même situé dans mon pannel perso
+Je clique sur le bouton « Modifier ». Un formulaire s'ouvre
+Dans ce formulaire sont situées toutes les informations sur mon établissement, qui ont été définies lors de sa création
+Je fait mes modifications
+Je clique sur le bouton « Appliquer ». Une fenêtre de confirmation s'ouvre
+Je clique sur « Confirmer », mes modifications sont enregistrées 
+Un mail automatique est envoyé au client et à la franchise en guise de trace écrite
+
+
+
+
+Fonctionnalité : Recherche #1
+Cas de figure: S'applique a la connexion Administrateur ET des franchises
+Scénario: Je clique sur la barre de recherche située sois dans mon pannel admin, sois dans mon pannel perso
+Je rentre ma recherche
+La page se met à jour sans rechargement et m'affiche les résultats de ma recherche, les franchises ou établissement désactivés sont grisés et placés à la fin de la liste
+
+Fonctionnalité : Recherche #2
+Cas de figure: S'applique a la connexion Administrateur ET des franchises
+Scénario: Je clique sur les filtres de recherches située sois dans mon pannel admin, sois dans mon pannel perso
+La page se met à jour sans rechargement et m'affiche les résultats correspondant à mes filtres, les franchises ou établissement désactivés sont grisés et placés à la fin de la liste
+

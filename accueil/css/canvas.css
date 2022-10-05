@@ -1,0 +1,19 @@
+
+
+/* CSS pour faire fonctionner la canvas qui tourne en arrière plan */
+
+*{
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+   
+
+}
+canvas{
+    position: fixed;
+}

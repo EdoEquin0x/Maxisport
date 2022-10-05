@@ -1,0 +1,2213 @@
+
+/* CSS DE LA PAGE D'EDITION DES FRANCHISES */
+
+
+/* C'était un challenge important car la page devais également être capable de lister les établissements comme le faire la page de listage */
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+
+/* CSS de base de la page */
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+
+}
+
+
+.slideranimationbarmiddle {
+    background-color: rgba(214, 214, 214, 0.178);
+    text-indent: 100%;
+    max-width: 50%;
+    margin-left: 25%;
+    animation: AppearfromUp2 1.2s ease-in-out;
+    font-size: 0.005em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+
+
+/* CSS de base des boutons sur la page, pour gérer les permissions */ 
+label.switch {  
+  margin-left: 45%;
+  margin-bottom: 2%;
+  text-align: left;
+  width: 2.5em;
+  height: 1.5em;
+  border-radius:60px;   
+  background-color:rgb(187, 255, 93);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+label.switch > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+label.switch > input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+} 
+label.switch > span:before, label.switch > span:after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+}
+label.switch > input[type="checkbox"]:focus ~ span {
+  box-shadow: 0 0 0 4px rgba(252, 190, 190, 0.4);
+}
+label.switch > input[type="checkbox"]:checked:focus ~ span {
+  box-shadow: 0 0 0 4px rgba(226, 252, 190, 0.4);
+}
+label.switch > span {
+  border-radius: 60px;  
+}
+label.switch > span:before {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 93, 93);
+  border-radius: 60px;
+  transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+  transform: scale(1);
+  opacity: 1;
+}
+label.switch > span:after{
+  top: 50%;
+  z-index: 3;
+  transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
+  width: 1.5em;
+  height: 1.5em;
+  transform: translate3d(0, -50%, 0);
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
+}
+
+
+
+
+/* CSS de l'activation de ces boutons, pour permettre au tout d'être fluide et estéthiques */
+label.switch > input[type="checkbox"]:checked ~ span:before {
+  transform: scale(0);
+  opacity: .7;
+}
+label.switch > input[type="checkbox"]:checked ~ span:after {
+  transform: translate3d(100%, -50%, 0);
+}
+
+
+
+
+
+
+  /* CSS des boites basiques de la page */
+
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pannelcheckfranchisebody {
+    justify-self: center;
+    max-width: 60%;
+    
+  }
+
+  .pannelcheckfranchiseblock {
+    background-color: rgba(214, 214, 214, 0.178);
+    margin-top: 10%;
+    
+  }
+
+  .pannelinfoblock {
+    margin-top: 5%;
+    margin-bottom: 25%;
+  }
+
+  .pannelcheckfranchise {
+    
+  }
+
+
+
+  /* En-tête de la page, donc la grande image et le titre */
+
+.pannelmainblock {
+    grid-area: pannelmainblock;
+    
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.franchisename h1 {
+    font-size: 4em;
+    font-weight: bolder;
+    color: rgb(157, 235, 63);
+  }
+
+
+.pannelpicture {
+    justify-self: center;
+    margin-top: 5%;
+  }
+
+  .pannelinfoblock {
+    margin-bottom: 10%;
+  }
+
+  /* CSS des boites de la page contenant les champ de texte */
+
+  .franchiseimg {
+    border-radius: 15px;
+    border: rgba(218, 218, 218, 0.781) 10px solid;
+  }
+
+
+
+
+
+  .slideranimationbarmiddle {
+    background-color: rgba(234, 234, 234, 0.178);
+    text-indent: 100%;
+    max-width: 50%;
+    margin-left: 25%;
+    font-size: 0.005em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+
+.informationwrapper h3 {
+    color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-size: 2em;
+    margin-left: 35%;
+    
+}
+
+
+
+
+.permissionwrapper h3 {
+    color: white;
+    font-size: 2em;
+    margin-left: 35%;
+
+    margin-top: 20%;
+    
+}
+
+
+.permissionwrapper p {
+    color: rgba(218, 218, 218, 0.781);
+    font-size: 1.5em;
+    margin-top: 2%;
+    
+
+}
+
+.parameterbox:hover p {
+    color: white;
+
+    
+
+}
+
+
+.parameterbox:hover {
+    border: 2px solid rgb(107, 185, 13);
+
+    
+
+}
+
+.parameterbox {
+    border: rgba(218, 218, 218, 0.781) 2px solid;
+    border-radius: 10px;
+    margin-top: 3%;
+    background-color: rgba(234, 234, 234, 0.178);
+    font-size: 1em;
+    margin-bottom: 3%;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
+    
+}
+
+
+.permissionwrapper {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    
+}
+
+.permissionwrapper .parameterbox {
+
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+
+
+
+.pannelinfoblock {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    background-color: rgba(214, 214, 214, 0.178);
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+
+
+.material-symbols-outlined.infoicon {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    
+
+}
+
+
+.establishblock.active .material-symbols-outlined.infoicon {
+  color: rgb(157, 235, 63);
+
+  
+
+}
+
+
+.franchise-edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10%;
+    
+
+
+    
+
+}
+
+
+
+.franchise-edit-form h2 {
+    justify-self: center;
+    color: white;
+    font-size: 3em;
+
+    margin-top: 8%;
+    margin-bottom: 6%;
+
+
+}
+
+.franchise-edit-form select {
+    color: white;
+    width: 500px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 0px;
+
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    cursor: pointer;
+    appearance: none;
+}
+
+
+
+.franchise-edit-form option {
+    color:white;
+    background-color: rgb(98, 98, 98);
+    border: 0.5px solid rgba(218, 218, 218, 0.781);   
+    font-size: 1.2em;
+
+}
+
+.franchise-edit-form select:focus {
+    border: 2px solid rgb(107, 185, 13);
+}
+
+.franchise-edit-form input {
+
+    color: white;
+    width: 500px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+
+    
+    
+}
+
+
+.franchise-edit-form input:focus {
+    outline: none;
+    border: 2px solid rgb(107, 185, 13);
+    overflow: hidden;
+    
+   
+    
+}
+
+
+.placeholder {
+    color: rgba(218, 218, 218, 0.781);
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    top: -65px;
+    right: -60px;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+    
+}
+
+::placeholder {
+    color: rgba(218, 218, 218, 0.781);
+
+}
+
+.likeplaceholder option {
+    
+
+}
+
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+
+
+
+.franchise-edit-form button {
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 2.2em;
+    margin-bottom: 2%;
+    margin-top: 10%;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+
+.franchise-edit-form button:hover {
+
+
+    background-color: rgb(107, 185, 13);
+    color: gray;
+
+}
+
+
+.franchise-edit-form input:focus ~ .placeholder {
+    top: -100px;
+    right: -60px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+.franchise-edit-form select:focus ~ .placeholder {
+    top: -100px;
+    right: -60px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+  /* CSS des boites de la page contenant les boutons et les informations qui leurs sont relatives */
+
+  .pannelbuttonblock {
+    grid-area: pannelbuttonblock;
+    margin-top: 20%;
+    background-color: rgba(214, 214, 214, 0.178);
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    justify-content: center;
+    align-items: center;
+     
+    max-width: 70%;
+    max-height: 70%;
+
+
+  }
+
+  .checkboxes h3 {
+    color: rgb(209, 195, 195);
+    font-size: 3em;
+    margin-bottom: 10%;
+
+
+  }
+
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 2%;
+    padding: 2.5%;
+  
+    
+  }
+
+  .parameterbox {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: -2%;
+  }
+
+  .checkboxes button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 1.2em;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+}
+
+
+button:hover {
+  background-color: rgba(158, 235, 63, 0.541);
+  color: gray;
+
+}
+
+
+
+
+
+
+
+.backbutton {
+  justify-self: center;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 93, 93);
+  color: white;
+  margin-left: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 2em;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 10%;
+}
+
+.backbutton:hover {
+    justify-self: center;
+    border: none;
+    margin-left: 40%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    background-color: rgb(205, 43, 43);
+    color: gray;
+    font-size: 2em;
+    justify-self: center;
+    text-align: center;
+    
+
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 10%;
+}
+
+
+
+
+#showpassword {
+  font-size: 1.4em;
+  color: white;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+
+
+.franchise-edit-form input:focus ~ #showpassword {
+  font-size: 1.4em;
+  color: rgb(157, 235, 63);
+  position: relative;
+  top: -90px;
+  right: -555px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+.pannelcheckestablishlist {
+  margin-bottom: 10%;
+  
+  background-color: rgba(214, 214, 214, 0.178);
+  
+}
+
+
+
+
+.establishlistblock {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  max-width: 523.23px;
+  margin-left: 28%;
+  
+  
+}
+
+.franchiseid {
+  display: none;
+}
+
+
+.pannelcheckestablishlist .Nofound {
+ 
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  color: rgb(224, 224, 224);
+}
+
+
+.pannelcheckestablishlist .Listingtext {
+  justify-content: center;
+  text-align: center;
+  font-size: 4em;
+  
+  margin-bottom: 6%;
+  margin-top: 5%;
+  margin-left: 25%;
+  max-width: 50%;
+  color: rgb(224, 224, 224);
+}
+
+.separator {
+  margin-top: 2%;
+  text-indent: 100%;
+  max-width: 50%;
+  margin-left: 25%;
+  font-size: 0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.textcontainer {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+
+
+
+
+.establishblock.active {
+  border: rgba(218, 218, 218, 0.781) 8px solid;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  grid-template-areas:
+  "image image"
+  "title title"
+  "infos .";
+  max-width: 523.23px;
+  min-width: 523.23px;
+  min-height: 710px;
+  max-height: 710px;
+
+}
+
+
+.establishblock.disabled {
+  border: rgba(168, 168, 168, 0.281) 8px solid;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  grid-template-areas:
+  "image image"
+  "title title"
+  "infos .";
+
+  max-width: 523.23px;
+
+  min-width: 523.23px;
+  min-height: 720px;
+  max-height: 720px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.establishblock:hover {
+  border: rgb(157, 235, 63) 8px solid;
+
+}
+
+.establishblock:hover img{
+  border: rgb(157, 235, 63) 10px solid;
+
+}
+
+.establishblock:hover.disabled {
+  border: rgb(255, 93, 93) 8px solid;
+
+}
+
+.establishblock:hover.disabled img{
+  border: rgb(255, 93, 93) 10px solid;
+
+}
+
+
+
+
+.establishname.active {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 3em;
+  color: rgb(157, 235, 63);
+  margin-top: 2%;
+  margin-left: -10%;
+  justify-self: center;
+  text-align: center;
+  
+}
+
+.establishname.disabled {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 3em;
+  margin-left: -10%;
+  color: rgb(255, 93, 93);
+  margin-top: 2%;
+  justify-self: center;
+  text-align: center;
+
+}
+
+
+
+.establishimg {
+  justify-self: center;
+
+  grid-area: image;
+  margin-top: -3px;
+
+  max-width: 256px;
+  max-height: 256px;
+  
+  width: 256px;
+  height: 256px;
+
+  min-width: 256px;
+  min-height: 256px;
+
+  border:rgba(218, 218, 218, 0.781) 10px solid;
+
+  border-radius: 10px;
+}
+
+.establishblock.disabled .establishimg {
+  justify-self: center;
+
+  grid-area: image;
+  margin-top: -3px;
+
+  max-width: 256px;
+  max-height: 256px;
+  
+  width: 256px;
+  height: 256px;
+
+  min-width: 256px;
+  min-height: 256px;
+
+  border:rgba(168, 168, 168, 0.281) 10px solid;
+
+  border-radius: 10px;
+}
+
+
+
+
+.infos.active {
+  grid-area: infos;
+  
+  font-size: 1.4em;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: -20%;
+  max-width: 15%;
+}
+
+
+
+.infos.disabled {
+  grid-area: infos;
+  
+  font-size: 1.4em;
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: -20%;
+  max-width: 15%;
+}
+
+
+
+
+.infos.active a {
+  color:white;
+  position: relative;
+  top: -2px;
+}
+
+.infos.disabled a {
+  color: gray;
+  position: relative;
+  top: -2px;
+}
+
+
+.infos.active a:hover {
+  color:rgb(157, 235, 63);
+}
+
+.infos.disabled a:hover {
+  color:rgb(255, 93, 93);
+}
+
+
+
+
+
+
+
+
+.infos.disabled p:hover {
+  color:rgb(255, 93, 93);
+}
+
+
+
+
+.infos.active p {
+  font-size: 1.1em;
+  margin-top: 2%;
+  color: rgb(157, 235, 63);
+}
+
+.infos.disabled p {
+  font-size: 1.1em;
+  margin-top: 2%;
+  color: rgb(255, 93, 93);
+}
+
+.material-symbols-outlined.infoicon {
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  
+
+}
+
+
+.establishblock.active .material-symbols-outlined.infoicon {
+
+  color: rgb(157, 235, 63);
+
+  
+
+}
+
+.franchisenameinfo {
+  display: none;
+}
+
+.franchiseid {
+  display: none;
+}
+
+
+.buttonblock .material-symbols-outlined.deleteicon {
+  font-size: 3em;
+  color: rgba(218, 218, 218, 0.781);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+
+}
+
+.buttonblock .material-symbols-outlined.deleteicon:hover {
+  color: rgb(255, 93, 93);
+}
+
+
+.buttonblock .material-symbols-outlined.franchiseparam {
+  font-size: 3em;
+  color: rgba(218, 218, 218, 0.781);
+  
+
+  
+
+}
+
+.buttonblock .material-symbols-outlined.franchiseparam:hover {
+  color: rgb(157, 235, 63);
+}
+
+.buttonblock {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  position: relative;
+  top: -25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 0.8em;
+}
+
+.pannelcheckfranchise {
+  justify-self: center;
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.textcontainer a {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(157, 235, 63);
+  color: white;
+  font-size: 1.8em;
+  margin-bottom: 5%;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 30%;
+  
+  }
+
+  .textcontainer a:hover {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(107, 185, 13);
+  color: gray;
+  font-size: 1.8em;
+  margin-bottom: 5%;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 30%;
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive pour téléphone */
+@media screen and (max-width: 760px) and (min-width: 200px) {
+  .slideranimationbarmiddle {
+    background-color: rgba(214, 214, 214, 0.178);
+    text-indent: 100%;
+    max-width: 50%;
+    margin-left: 25%;
+    animation: AppearfromUp2 1.2s ease-in-out;
+    font-size: 0.005em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+
+
+/* CSS de base des boutons sur la page, pour gérer les permissions */ 
+label.switch {  
+  margin-left: 45%;
+  margin-bottom: 2%;
+  text-align: left;
+  width: 2em;
+  height: 1em;
+  border-radius:60px;   
+  background-color:rgb(187, 255, 93);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+label.switch > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+label.switch > input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+} 
+label.switch > span:before, label.switch > span:after {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+}
+label.switch > input[type="checkbox"]:focus ~ span {
+  box-shadow: 0 0 0 4px rgba(252, 190, 190, 0.4);
+}
+label.switch > input[type="checkbox"]:checked:focus ~ span {
+  box-shadow: 0 0 0 4px rgba(226, 252, 190, 0.4);
+}
+label.switch > span {
+  border-radius: 60px;  
+}
+label.switch > span:before {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 93, 93);
+  border-radius: 60px;
+  transition: opacity .2s ease-out .1s, transform .2s ease-out .1s;
+  transform: scale(1);
+  opacity: 1;
+}
+label.switch > span:after{
+  top: 50%;
+  z-index: 3;
+  transition: transform .4s cubic-bezier(0.44,-0.12, 0.07, 1.15);
+  width: 1em;
+  height: 1em;
+  transform: translate3d(0, -50%, 0);
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);  
+}
+
+
+
+
+/* CSS de l'activation de ces boutons, pour permettre au tout d'être fluide et estéthiques */
+label.switch > input[type="checkbox"]:checked ~ span:before {
+  transform: scale(0);
+  opacity: .7;
+}
+label.switch > input[type="checkbox"]:checked ~ span:after {
+  transform: translate3d(100%, -50%, 0);
+}
+
+
+
+
+
+
+  /* CSS des boites basiques de la page */
+
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pannelcheckfranchisebody {
+    justify-self: center;
+    max-width: 100%;
+    
+  }
+
+  .pannelcheckfranchiseblock {
+    margin-top: 10%;
+    
+  }
+
+  .pannelinfoblock {
+    margin-top: 5%;
+    margin-bottom: 25%;
+    margin-left: 10%;
+  }
+
+  .pannelcheckfranchise {
+    
+  }
+
+
+
+  /* En-tête de la page, donc la grande image et le titre */
+
+.pannelmainblock {
+    grid-area: pannelmainblock;
+    
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.franchisename h1 {
+    font-size: 3em;
+    font-weight: bolder;
+    color: rgb(157, 235, 63);
+    margin-left: -10%;
+    
+  }
+
+
+.pannelpicture {
+    justify-self: center;
+    margin-top: 5%;
+    
+  }
+
+  .pannelinfoblock {
+    margin-bottom: 10%;
+    
+  }
+
+  /* CSS des boites de la page contenant les champ de texte */
+
+  .franchiseimg {
+    border-radius: 15px;
+    max-width: 196px;
+    max-height: 196px;
+    border: rgba(218, 218, 218, 0.781) 10px solid;
+    margin-left: -10%;
+  }
+
+
+
+
+
+  .slideranimationbarmiddle {
+    background-color: rgba(234, 234, 234, 0.178);
+    text-indent: 100%;
+    max-width: 50%;
+    margin-left: 25%;
+    font-size: 0.005em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+
+.informationwrapper h3 {
+    color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-size: 2em;
+    margin-left: 5%;
+    
+}
+
+
+
+
+.permissionwrapper h3 {
+    color: white;
+    font-size: 2em;
+    margin-left: 5%;
+
+    margin-top: 20%;
+    
+}
+
+
+.permissionwrapper p {
+    color: rgba(218, 218, 218, 0.781);
+    font-size: 1em;
+    margin-top: 2%;
+    
+
+}
+
+.parameterbox:hover p {
+    color: white;
+
+    
+
+}
+
+
+.parameterbox:hover {
+    border: 2px solid rgb(107, 185, 13);
+
+    
+
+}
+
+.parameterbox {
+    border: rgba(218, 218, 218, 0.781) 2px solid;
+    border-radius: 10px;
+    margin-top: 3%;
+    font-size: 1em;
+    margin-bottom: 3%;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
+    
+}
+
+
+.permissionwrapper {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+    
+}
+
+.permissionwrapper .parameterbox {
+
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    
+}
+
+
+
+
+.pannelinfoblock {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    font-size: 1em;
+    max-width: 70%;
+    text-align: center;
+}
+
+
+
+.material-symbols-outlined.infoicon {
+    font-size: 2em;
+    color: white;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    
+
+}
+.establishblock.active .material-symbols-outlined.infoicon {
+  color: rgb(157, 235, 63);
+
+  
+
+}
+
+
+
+.franchise-edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10%;
+    
+
+
+    
+
+}
+
+
+
+.franchise-edit-form h2 {
+    justify-self: center;
+    color: white;
+    font-size: 3em;
+
+    margin-top: 8%;
+    margin-bottom: 6%;
+
+
+}
+
+.franchise-edit-form select {
+    color: white;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 0px;
+
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    cursor: pointer;
+    appearance: none;
+}
+
+
+
+.franchise-edit-form option {
+    color:white;
+    background-color: rgb(98, 98, 98);
+    border: 0.5px solid rgba(218, 218, 218, 0.781);   
+    font-size: 1.2em;
+
+}
+
+.franchise-edit-form select:focus {
+    border: 2px solid rgb(107, 185, 13);
+}
+
+.franchise-edit-form input {
+
+    color: white;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(168, 168, 168, 0.281);
+    font-size: 1.2em;
+    border: 2px solid rgba(218, 218, 218, 0.781);   
+    border-radius: 10px;
+    padding-left: 25px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+
+    
+    
+}
+
+
+.franchise-edit-form input:focus {
+    outline: none;
+    border: 2px solid rgb(107, 185, 13);
+    overflow: hidden;
+    
+   
+    
+}
+
+
+.placeholder {
+    color: rgba(218, 218, 218, 0.781);
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    top: -65px;
+    right: -60px;
+    pointer-events: none;
+    cursor: default;
+    display: none;
+    
+}
+
+::placeholder {
+    color: rgba(218, 218, 218, 0.781);
+
+}
+
+.likeplaceholder option {
+    
+
+}
+
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+
+
+
+.franchise-edit-form button {
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 1em;
+    margin-bottom: 2%;
+    margin-top: 10%;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+
+.franchise-edit-form button:hover {
+
+
+    background-color: rgb(107, 185, 13);
+    color: gray;
+
+}
+
+
+.franchise-edit-form input:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+.franchise-edit-form select:focus ~ .placeholder {
+    top: -10px;
+    right: -20px;
+    color:rgb(107, 185, 13);
+    transition: top .8s;
+    display: flex;
+    
+}
+
+  /* CSS des boites de la page contenant les boutons et les informations qui leurs sont relatives */
+
+  .pannelbuttonblock {
+    grid-area: pannelbuttonblock;
+    margin-top: 20%;
+    justify-content: center;
+    align-items: center;
+     
+    max-width: 100%;
+    max-height: 70%;
+
+
+  }
+
+  .checkboxes h3 {
+    color: rgb(209, 195, 195);
+    font-size: 3em;
+    margin-bottom: 10%;
+
+
+  }
+
+  .checkboxes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 2%;
+    padding: 2.5%;
+  
+    
+  }
+
+  .parameterbox {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: -2%;
+  }
+
+  .checkboxes button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    font-size: 1.2em;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+}
+
+
+button:hover {
+  background-color: rgba(158, 235, 63, 0.541);
+  color: gray;
+
+}
+
+
+
+
+
+
+
+.backbutton {
+  justify-self: center;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 93, 93);
+  color: white;
+  margin-left: 28%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 2em;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 10%;
+}
+
+.backbutton:hover {
+    justify-self: center;
+    border: none;
+    margin-left: 28%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    background-color: rgb(205, 43, 43);
+    color: gray;
+    font-size: 2em;
+    justify-self: center;
+    text-align: center;
+    
+
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    max-width: 10%;
+}
+
+
+
+
+#showpassword {
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: -60px;
+  right: -150px;
+
+  cursor: pointer;
+}
+
+
+
+.franchise-edit-form input:focus ~ #showpassword {
+  font-size: 2em;
+  color: rgb(157, 235, 63);
+  position: relative;
+  top: -80px;
+  right: -150px;
+  cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+.pannelcheckestablishlist {
+  margin-bottom: 10%;
+  
+  
+}
+
+.pannelcheckestablishlist {
+  margin-left: -10%;
+
+}
+
+
+.establishlistblock {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  max-width: 523.23px;
+
+  
+  
+}
+
+.franchiseid {
+  display: none;
+}
+
+
+.pannelcheckestablishlist .Nofound {
+ 
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  color: rgb(224, 224, 224);
+}
+
+
+.pannelcheckestablishlist .Listingtext {
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+  
+  margin-bottom: 6%;
+  margin-top: 5%;
+  margin-left: 25%;
+  max-width: 50%;
+  color: rgb(224, 224, 224);
+}
+
+.separator {
+  margin-top: 2%;
+  text-indent: 100%;
+  max-width: 50%;
+  margin-left: 25%;
+  font-size: 0.005em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.textcontainer {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+
+
+
+
+
+.establishblock.active {
+  border: rgba(218, 218, 218, 0.781) 8px solid;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  grid-template-areas:
+  "image image"
+  "title title"
+  "infos .";
+  max-width: 330.23px;
+  margin-left: -35%;
+  min-width: 330.23px;
+  min-height: 520px;
+  max-height: 520px;
+
+
+
+}
+
+
+.establishblock.disabled {
+  border: rgba(168, 168, 168, 0.281) 8px solid;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
+  grid-template-areas:
+  "image image"
+  "title title"
+  "infos .";
+
+  max-width: 330.23px;
+  margin-left: -35%;
+  min-width: 330.23px;
+  min-height: 520px;
+  max-height: 520px;
+
+
+
+  
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.establishblock:hover {
+  border: rgb(157, 235, 63) 8px solid;
+
+}
+
+.establishblock:hover img{
+  border: rgb(157, 235, 63) 10px solid;
+
+}
+
+.establishblock:hover.disabled {
+  border: rgb(255, 93, 93) 8px solid;
+
+}
+
+.establishblock:hover.disabled img{
+  border: rgb(255, 93, 93) 10px solid;
+
+}
+
+
+
+
+.establishname.active {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 2.5em;
+  color: rgb(157, 235, 63);
+  margin-top: 2%;
+  margin-left: -10%;
+  justify-self: center;
+  text-align: center;
+  
+  
+}
+
+.establishname.disabled {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 2.5em;
+  margin-left: -10%;
+  color: rgb(255, 93, 93);
+  margin-top: 2%;
+  justify-self: center;
+  text-align: center;
+  
+}
+
+
+
+.establishblock.active .establishimg {
+  justify-self: center;
+
+  grid-area: image;
+  margin-top: -3px;
+
+  max-width: 128px;
+  max-height: 128px;
+  
+  width: 128px;
+  height: 128px;
+
+  min-width: 128px;
+  min-height: 128px;
+
+  border:rgba(218, 218, 218, 0.781) 10px solid;
+
+  border-radius: 10px;
+}
+
+.establishblock.disabled .establishimg {
+  justify-self: center;
+
+  grid-area: image;
+  margin-top: -3px;
+
+  max-width: 128px;
+  max-height: 128px;
+  
+  width: 128px;
+  height: 128px;
+
+  min-width: 128px;
+  min-height: 128px;
+
+  border:rgba(168, 168, 168, 0.281) 10px solid;
+
+  border-radius: 10px;
+}
+
+
+
+
+.infos.active {
+  grid-area: infos;
+  
+  font-size: 1.2em;
+
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 5%;
+  max-width: 15%;
+  margin-bottom: -20%;
+
+}
+
+
+
+.infos.disabled {
+  grid-area: infos;
+  font-size: 1.2em;
+
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-bottom: -20%;
+  max-width: 15%;
+}
+
+
+
+
+.infos.active a {
+  color:white;
+  position: relative;
+  top: -2px;
+}
+
+.infos.disabled a {
+  color: gray;
+  position: relative;
+  top: -2px;
+}
+
+
+.infos.active a:hover {
+  color:rgb(157, 235, 63);
+}
+
+.infos.disabled a:hover {
+  color:rgb(255, 93, 93);
+}
+
+
+
+
+
+
+
+
+.infos.disabled p:hover {
+  color:rgb(255, 93, 93);
+}
+
+
+
+
+.infos.active p {
+  font-size: 1.1em;
+  margin-top: 2%;
+  color: rgb(157, 235, 63);
+}
+
+.infos.disabled p {
+  font-size: 1.1em;
+  margin-top: 2%;
+  color: rgb(255, 93, 93);
+}
+
+.material-symbols-outlined.infoicon {
+  font-size: 2em;
+  color: white;
+  position: relative;
+  top: 10px;
+  right: 10px;
+  
+
+}
+
+.establishblock.active .material-symbols-outlined.infoicon {
+
+  color: rgb(157, 235, 63);
+
+  
+
+}
+
+
+.franchisenameinfo {
+  display: none;
+}
+
+.franchiseid {
+  display: none;
+}
+
+
+.buttonblock .material-symbols-outlined.deleteicon {
+  font-size: 3em;
+  color: rgba(218, 218, 218, 0.781);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: relative;
+  top: 10px;
+
+
+}
+
+.buttonblock .material-symbols-outlined.deleteicon:hover {
+  color: rgb(255, 93, 93);
+}
+
+
+.buttonblock .material-symbols-outlined.franchiseparam {
+  font-size: 3em;
+  margin-top: 3%;
+  color: rgba(218, 218, 218, 0.781);
+  
+
+  
+
+}
+
+.buttonblock .material-symbols-outlined.franchiseparam:hover {
+  color: rgb(157, 235, 63);
+}
+
+.buttonblock {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  position: relative;
+  top: -25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 0.8em;
+}
+
+.pannelcheckfranchise {
+  justify-self: center;
+  
+
+}
+
+
+
+
+
+
+.textcontainer a {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(157, 235, 63);
+  color: white;
+  font-size: 1em;
+  margin-bottom: 5%;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 50%;
+  
+  }
+
+  .textcontainer a:hover {
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(107, 185, 13);
+  color: gray;
+  font-size: 1em;
+  margin-bottom: 5%;
+  justify-self: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 50%;
+  
+  }
+
+
+
+
+
+
+  main {
+    width: 110%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+/* Responsive pour tablettes */
+@media screen and (max-width: 1281px) and (min-width: 760px) {
+
+
+
+
+
+
+
+  .pannelinfoblock {
+    background-color: rgba(0, 0, 0, 0.0);
+    box-shadow: none;
+    font-size: 1em;
+    max-width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+
+.pannelinfoblock h3 {
+
+  margin-left: -5%;
+}
+
+
+.pannelcheckfranchisebody {
+  justify-self: center;
+  max-width: 100%;
+  margin-left: 5%;
+}
+
+
+.pannelcheckestablishlist .Listingtext {
+  font-size: 2em;
+}
+
+
+
+.establishblock {
+  margin-left: -25%;
+
+}
+
+.establishname.active {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 2.5em;
+  color: rgb(157, 235, 63);
+  margin-top: 2%;
+  margin-left: -10%;
+
+  justify-self: center;
+  text-align: center;
+  
+  
+}
+
+.establishname.disabled {
+  max-width: 50%;
+  grid-area: title;
+  font-size: 2.5em;
+  margin-left: -10%;
+  color: rgb(255, 93, 93);
+  margin-top: 2%;
+  justify-self: center;
+  text-align: center;
+  
+}
+
+
+
+
+.establishblock.active {
+  max-height: 700px;
+  min-height: 700px;
+}
+
+.establishblock.disabled {
+  max-height: 700px;
+  min-height: 700px;
+
+
+}
+
+
+}

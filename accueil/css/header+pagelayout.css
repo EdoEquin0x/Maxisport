@@ -1,0 +1,315 @@
+
+/* CSS DU HEADER ET DU LAYOUT PRINCIPAL ACTIF SUR TOUTES LES PAGES */
+
+
+/* Reset pour que le margin, le padding et tout autre paramètre par défaut
+qui pourrais être génant soient retirés */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+}
+
+/* Ici je défini une grid, ce qui va me permettre de bien séparer mon header, 
+mon main et mon footer car de base ils ne l'étaient pas */
+body {
+    font-family: 'Bahnschrift', sans-serif;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    
+}
+
+/* Je calibre un peu les dimensions des header, main et footer et je les places en Z-Index 1, pour éviter l'overlap avec la canvas */
+header {
+    grid-area: header;
+    margin-bottom: 5%;
+    z-index: 1;
+}
+
+main {
+    grid-area: main;
+    z-index: 1;
+    
+}
+
+footer {
+    grid-area: footer;
+    margin-top: 5%;
+    z-index: 1;
+    
+}
+
+/* Je place la canvas en Z-Index 3, pour éviter l'overlap avec le reste du contenu et pour me laisser un z-index 2 disponible au cas ou j'en ai besoin*/
+.nokey {
+    z-index: 3;
+}
+
+
+
+
+
+/* Stylisation de la navbar pour pc , j'ai fait quelques tentatives avec des images de background, des couleurs de background, 
+il s'est avéré que le meilleur résultat a été obtenu avec la canvas */
+.navbar a {
+    color: rgb(250, 250, 250);
+  }
+  
+.navbar a:hover {
+    color: rgb(228, 245, 204);
+  }
+
+body {
+    height: 100vh;
+    width: 100vw;
+    /* background-image: url("/images/background.jpg"); */
+    background-size: cover;
+}
+
+
+.navbar {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.8em;
+    box-sizing: border-box;
+}
+
+
+.navmenu {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: bold;
+    justify-self: center;
+}
+
+.navbar .navmenu ul {
+    display: flex;
+}
+
+
+.navbar .navmenu ul li {
+    margin: 0 25px;
+}
+
+.navbar .navmenu ul li.active a {
+    color: rgb(107, 185, 13);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.navbar .layermenu {
+    display: none;
+    width: 35px;
+    
+}
+
+.slideranimationbar {
+    font-size: 0.05em;
+    transition: all 0.5s ease;
+    animation: moveToRight 1.2s ease-in-out;
+    background-color: rgba(187, 255, 93, 0418);
+    color: rgba(187, 255, 93, 0418);
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    
+
+}
+
+.mobilenavbar {
+    display: none;
+}
+
+/* Responsive pour mobile et stylisation de la navbar mobile */
+
+
+@media screen and (max-width: 760px) and (min-width: 200px) {
+    .navbar {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 120%;
+        
+    }
+    .mobilenavbar {
+        display: flex;
+        background-color: rgba(214, 214, 214, 0.178);
+             
+        
+
+    }
+
+    
+
+
+    .material-symbols-outlined {
+        font-size: 3.5em;
+        color: white;
+        
+        
+    
+    }
+
+
+
+    .navcontainer {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .navcontainer li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-left: 2%;
+    }
+
+
+
+
+    
+}
+
+
+/* Responsive pour mobile et stylisation de la navbar petite et moyenne tablette (Ipad par exemple) */
+@media screen and (max-width: 1020px) and (min-width: 760px) {
+    .navbar {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 120%;
+        
+    }
+    .mobilenavbar {
+        display: flex;
+        background-color: rgba(214, 214, 214, 0.178);
+             
+        
+
+    }
+
+    
+
+
+    .material-symbols-outlined {
+        font-size: 7.5em;
+        color: white;
+        
+        
+    
+    }
+
+
+
+    .navcontainer {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .navcontainer li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-left: 5%;
+    }
+
+
+
+    
+}
+
+
+
+
+
+/* Responsive pour mobile et stylisation de la navbar pour large tablette */
+
+
+
+@media screen and (max-width: 1280px) and (min-width: 1021px) {
+
+    .navbar {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 120%;
+        
+    }
+    .mobilenavbar {
+        display: flex;
+        background-color: rgba(214, 214, 214, 0.178);
+        
+        
+
+    }
+
+    
+
+
+    .material-symbols-outlined {
+        font-size: 9em;
+        color: white;
+        
+        
+    
+    }
+
+
+
+    .navcontainer {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .navcontainer li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-left: 5%;
+    }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,260 @@
+/* CSS DE LA PAGE DE VALIDATION DE CHAQUE ACTION */
+
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+* {
+    font-family: 'Bahnschrift', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    z-index: 2;
+    
+}
+
+
+main {
+    max-width: 40%;
+    margin-left: 30%;
+}
+
+.confirmationformcontainer{
+    justify-self: center;
+    margin-bottom: 40%;
+    margin-top: 20%;
+
+}
+
+.confirmationform {
+    background-color: rgba(100, 100, 100, 0.46);
+    box-shadow: rgba(226, 252, 190, 0.4) 5px 5px, rgba(226, 252, 190, 0.3) 10px 10px, rgba(226, 252, 190, 0.2) 15px 15px, rgba(226, 252, 190, 0.1) 20px 20px, rgba(226, 252, 190, 0.05) 25px 25px;    
+    font-size: 1.5em;
+    
+    color: white;
+    
+}
+
+.textlabel{
+    display: none;
+}
+
+.confirmtiontitle {
+    margin-top: 5%;
+}
+
+.confirmationform h3 {
+
+    font-size: 2.5em;
+    color: rgb(157, 235, 63);
+    text-align: center;
+}
+
+.confirmationform p {
+    max-width: 50%;
+    margin-left: 25%;
+}
+
+.confirmbutton {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(157, 235, 63);
+    color: white;
+    margin-top: 6%;
+    font-size: 1.2em;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 10%;
+
+
+}
+
+
+.formcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.confirmbutton:hover {
+
+    background-color: rgba(158, 235, 63, 0.178);
+    color: gray;
+    
+
+}
+
+.cancelbutton {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    margin-top: 6%;
+    background-color: rgb(255, 93, 93);
+    color: white;
+    font-size: 1.2em;
+    justify-self: center;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+}
+
+.cancelbutton:hover {
+
+    background-color: rgba(255, 93, 93, 0.178);
+    color: gray;
+
+
+}
+
+.confirmationform button {
+    margin-top: 10%;
+    margin-bottom: 5%;
+
+}
+
+
+.establishnamespan {
+    color:rgb(255, 93, 93);
+    font-weight: 900;
+
+}
+
+
+.franchisenamecreate {
+    color:rgb(157, 235, 63);
+    font-weight: 900;
+}
+
+/* Responsive pour téléphone */
+@media screen and (max-width: 760px) and (min-width: 200px) {
+    main {
+        max-width: 100%;
+        margin-left: -5%;
+    }
+
+    .formcontainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40%;
+        margin-top: 20%;
+        
+    }
+
+    .confirmationform h3 {
+        font-size: 1.5em;
+        margin-left: 10%;
+
+    }
+
+    .confirmationform p {
+        font-size: 1em;
+        max-width: 70%;
+        margin-left: 10%;
+    }
+
+
+    .confirmbutton {
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        margin-top: 6%;
+        font-size: 1em;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 10%;
+        margin-top: -5%;
+    
+    }
+
+    .cancelbutton {
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 10%;
+        margin-top: 6%;
+        background-color: rgb(255, 93, 93);
+        color: white;
+        font-size: 1em;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    
+    }
+
+
+}
+
+/* Responsive pour tablettes */
+@media screen and (max-width: 1281px) and (min-width: 760px) {
+
+    main {
+        max-width: 80%;
+        margin-left: 10%;
+    }
+
+    .formcontainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40%;
+        margin-top: 20%;
+        
+    }
+
+    .confirmationform h3 {
+        font-size: 2.2em;
+        margin-left: 3%;
+
+    }
+
+    .confirmationform p {
+        font-size: 1.5em;
+        max-width: 70%;
+        margin-left: 10%;
+    }
+
+
+    .confirmbutton {
+        border: none;
+        border-radius: 10px;
+        background-color: rgb(157, 235, 63);
+        color: white;
+        margin-top: 6%;
+        font-size: 1.5em;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 900;
+        letter-spacing: 2px;
+        margin-bottom: 10%;
+        margin-top: -5%;
+    
+    }
+
+    .cancelbutton {
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 10%;
+        margin-top: 6%;
+        background-color: rgb(255, 93, 93);
+        color: white;
+        font-size: 1.5em;
+        justify-self: center;
+        text-transform: uppercase;
+        padding: 10px 60px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    
+    }
+
+}

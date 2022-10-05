@@ -1,0 +1,74 @@
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<!-- HTML du formulaire de contact, j'ai aussi importé la librairie d'icone de google, pour rendre la page plus esthétique -->
+
+
+<div class="bodyformblock">
+    <div class="formblock">
+        <div class="contacttext">
+            <h1>Nous contacter</h1>
+            <p>Des questions ? Une recherche d'information ? Un potentiel franchisage ? Contactez-nous !</p>
+        </div>
+        <form class="contact-form" action="infos/contactformsubmit.php" method="post">
+
+            <div class="FormBlock">
+                <p class="material-symbols-outlined infoicon">person</p>
+                <input type="text" name="name" placeholder="Nom et prénom" required>
+                <p class="placeholder">Nom et prénom</p>
+            </div>
+
+            <br>
+            <div class="FormBlock">
+                <p class="material-symbols-outlined infoicon">apartment</p>
+                <input type="text" name="societyname" placeholder="Nom de la société" required>
+                <p class="placeholder">Nom de votre société</p>
+            </div>
+
+            <br>
+            <div class="FormBlock">
+                <p class="material-symbols-outlined infoicon">call</p>
+                <input type="tel" name="tel" placeholder="Numéro de téléphone" required>
+                <p class="placeholder">Numéro de téléphone de votre société</p>
+            </div>
+
+            <br>
+            <div class="FormBlock">
+                <p class="material-symbols-outlined infoicon">mail</p>
+                <input type="text" name="mail" placeholder="Email de votre société" required pattern="[^ @]*@[^ @]*">
+                <p class="placeholder">Email de votre société</p>
+            </div>
+
+            <br>
+            <div class="FormBlock">
+                <p class="material-symbols-outlined infoicon">live_help</p>
+                <input type="text" name="subject" placeholder="Sujet du message" required>
+                <p class="placeholder">Sujet du message</p>
+            </div>
+
+            <br>
+            <div class="FormBlock">
+                <p class="material-symbols-outlined textareaicon">chat</p>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <p class="placeholder">Message</p>
+            </div>
+
+            <br>
+            <button type="submit" name="submit">Envoyer</button>
+            
+
+
+
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
