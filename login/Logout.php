@@ -10,4 +10,4 @@
 
     session_unset();
     session_destroy();
-    header("location: http://localhost/MaxiSport/index.php");
+    header("location: https://php-maxisport.herokuapp.com/index.php");

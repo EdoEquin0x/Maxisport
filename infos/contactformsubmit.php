@@ -52,5 +52,5 @@ if (isset($_POST['submit'])) {
 
 
 
-    header("Location: http://localhost/MaxiSport/index.php");
+    header("Location: https://php-maxisport.herokuapp.com/index.php");
 }

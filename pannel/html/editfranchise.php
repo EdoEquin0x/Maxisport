@@ -52,7 +52,7 @@
                         <div class="pannelcheckfranchise">
                             <div class="pannelmainblock">
                                 <br/>
-                                    <a class="backbutton" href="http://localhost/MaxiSport/franchiselisting.php"><<</a>
+                                    <a class="backbutton" href="https://php-maxisport.herokuapp.com/franchiselisting.php"><<</a>
                                 <br/>
                                 <div class="pannelpicture">
                                     <img class="franchiseimg" width="384" height="384" src="<?php echo "$franchise->imgurl"; ?>" alt="Error Loading Img"></img>
@@ -203,7 +203,7 @@
                             echo '<br/>';
                             echo '<p class="Nofound"> Aucun établissement </p>';
                             echo '<div class="textcontainer">';
-                            echo '<a class="Addfranchise" href="http://localhost/MaxiSport/pannel/html/createform.php?createwhat=establish">Créer un établissement</a>';
+                            echo '<a class="Addfranchise" href="https://php-maxisport.herokuapp.com/pannel/html/createform.php?createwhat=establish">Créer un établissement</a>';
                             echo '</div>';
                             ?>
                             <style>
@@ -224,7 +224,7 @@
                             echo '<br/>';
                             echo '<p class="Listingtext"> Etablissements rattachés à cette franchise </p>';
                             echo '<div class="textcontainer">';
-                            echo '<a class="Addfranchise" href="http://localhost/MaxiSport/pannel/html/createform.php?createwhat=establish">Créer un établissement</a>';
+                            echo '<a class="Addfranchise" href="https://php-maxisport.herokuapp.com/pannel/html/createform.php?createwhat=establish">Créer un établissement</a>';
                             echo '</div>';
                             ?>
                             <style>
@@ -400,11 +400,11 @@
         
         <?php        
         }
-        else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+        else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
     }
 
-    else {session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+    else {session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
     include '../../htmlbase/footer.html';
   

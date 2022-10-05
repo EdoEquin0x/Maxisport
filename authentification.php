@@ -28,13 +28,13 @@ if (isset($_POST["loginsubmit"])) {
         if ($resultadmin == false) { // L'utilisateur n'est pas admin
             if ($resultfranchise == false) { // L'utilisateur n'est pas une franchise
                 if ($resultestablish == false) { // L'utilisateur n'est pas un établissement, il n'existe donc pas dans la BDD
-                    header("location: http://localhost/MaxiSport/login.php?notexisting=true&login=$name");
+                    header("location: https://php-maxisport.herokuapp.com/login.php?notexisting=true&login=$name");
                 }
                 else { // L'utilisateur est un établissement
                     if ($resultestablish['establishEnabled'] == true) { // L'utilisateur existe et est un établissement, on vérifie si il est activé
                         if (password_verify($pswd, $resultestablish['establishPswd']) == true) { //Le MDP est le bon
                             if ($resultestablish['changedPswd'] == false) { // Le MDP utilisé est celui à usage unique fourni lors de l'inscription
-                                header("location: http://localhost/MaxiSport/login/newpassword.php");
+                                header("location: https://php-maxisport.herokuapp.com/login/newpassword.php");
                             }
                             else { // Le MDP utilisé est celui qui as été redéfini
                                 session_start();
@@ -42,15 +42,15 @@ if (isset($_POST["loginsubmit"])) {
                                 $_SESSION["Email"] = $name;                                         // sur d'autres pages, comme l'id, qui est utilisé pour afficher la
                                 $_SESSION["franchiseid"] = $resultestablish['franchiseid'];         // bonne page en "read-only"
                                 $_SESSION["Id"] = $resultestablish['establishId'];
-                                header("location: http://localhost/MaxiSport/index.php");
+                                header("location: https://php-maxisport.herokuapp.com/index.php");
                             }
                         } 
                         else { //Le MDP ne match pas
-                            header("location: http://localhost/MaxiSport/login.php?error=true&login=$name");
+                            header("location: https://php-maxisport.herokuapp.com/login.php?error=true&login=$name");
                         }
                     }
                     else { // L'utilisateur est bloqué
-                        header("location: http://localhost/MaxiSport/login.php?locked=true&login=$name");
+                        header("location: https://php-maxisport.herokuapp.com/login.php?locked=true&login=$name");
 
                     }
                     
@@ -60,22 +60,22 @@ if (isset($_POST["loginsubmit"])) {
                 if ($resultfranchise['franchiseEnabled'] == true) { // L'utilisateur existe et est une franchise, on vérifie si elle est activé
                     if (password_verify($pswd, $resultfranchise['franchisePswd']) == true) { //Le MDP est le bon
                         if ($resultfranchise['changedPswd'] == false) { // Le MDP utilisé est celui à usage unique fourni lors de l'inscription
-                            header("location: http://localhost/MaxiSport/login/newpassword.php");
+                            header("location: https://php-maxisport.herokuapp.com/login/newpassword.php");
                         }
                         else { // Le MDP utilisé est celui qui as été redéfini
                             session_start();
                             $_SESSION["Level"] = 'Franchise';                          //Je stocke le niveau d'authentification ainsi que d'autres infos utiles
                             $_SESSION["Email"] = $name;                                // sur d'autres pages, comme l'id, qui est utilisé pour afficher la
                             $_SESSION["Id"] = $resultfranchise['franchiseId'];         // bonne page en "read-only"
-                            header("location: http://localhost/MaxiSport/index.php");
+                            header("location: https://php-maxisport.herokuapp.com/index.php");
                         }
                     } 
                     else { //Le MDP ne match pas
-                        header("location: http://localhost/MaxiSport/login.php?error=true&login=$name");
+                        header("location: https://php-maxisport.herokuapp.com/login.php?error=true&login=$name");
                     } 
                 }
                 else { // L'utilisateur est bloqué
-                    header("location: http://localhost/MaxiSport/login.php?locked=true&login=$name");
+                    header("location: https://php-maxisport.herokuapp.com/login.php?locked=true&login=$name");
                 }
             }
         } 
@@ -83,10 +83,10 @@ if (isset($_POST["loginsubmit"])) {
             if (password_verify($pswd, $resultadmin['adminPswd']) == true) { //Le MDP est le bon
                 session_start();
                 $_SESSION["Level"] = 'Admin';
-                header("location: http://localhost/MaxiSport/index.php");
+                header("location: https://php-maxisport.herokuapp.com/index.php");
             } 
             else { //Le MDP ne match pas
-                header("location: http://localhost/MaxiSport/login.php?error=true&login=$name");
+                header("location: https://php-maxisport.herokuapp.com/login.php?error=true&login=$name");
             } 
         }
 
@@ -134,7 +134,7 @@ else if (isset($_GET["adminsubmit"])) {
         $registeradmin = "INSERT INTO admin VALUES (?, ?, true)";
         $adminregister = $auth->prepare($registeradmin);
         $adminregister->execute(array($registerlogin,password_hash($registerpassword, PASSWORD_BCRYPT)));
-        header("location: http://localhost/MaxiSport/index.php");
+        header("location: https://php-maxisport.herokuapp.com/index.php");
 
 
 
@@ -154,7 +154,7 @@ else if (isset($_GET["adminsubmit"])) {
 
     }
     else {
-        header("location: http://localhost/MaxiSport/login/presentation.php?passwordmismatch=true&$url2&createadmin=#");
+        header("location: https://php-maxisport.herokuapp.com/login/presentation.php?passwordmismatch=true&$url2&createadmin=#");
     }
 
 }
@@ -183,16 +183,16 @@ else if (isset($_GET["changepasswordsubmit"])) {
 
     if ($resultfranchise == false) { // L'utilisateur n'est pas une franchise
         if ($resultestablish == false) { // L'utilisateur n'est pas un établissement, il n'existe donc pas dans la BDD
-            header("location: http://localhost/MaxiSport/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
+            header("location: https://php-maxisport.herokuapp.com/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
         }
         else { // L'utilisateur est un établissement
             if (password_verify($password, $resultestablish['establishPswd']) == true) { //Le MDP est le bon
                 $request = "UPDATE establish SET establishPswd=?, changedPswd=? WHERE establishLogin=?";
                 $auth->prepare($request)->execute([$newpassword, true, $login]);
-                header("location: http://localhost/MaxiSport/login.php");
+                header("location: https://php-maxisport.herokuapp.com/login.php");
             }
             else { // Le mot de passe est érroné
-                header("location: http://localhost/MaxiSport/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
+                header("location: https://php-maxisport.herokuapp.com/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
             }   
         }   
     }
@@ -200,10 +200,10 @@ else if (isset($_GET["changepasswordsubmit"])) {
         if (password_verify($password, $resultfranchise['franchisePswd']) == true) { //Le MDP est le bon
             $request = "UPDATE franchise SET franchisePswd=?, changedPswd=? WHERE franchiseLogin=?";
             $auth->prepare($request)->execute([$newpassword, true, $login]);
-            header("location: http://localhost/MaxiSport/login.php");
+            header("location: https://php-maxisport.herokuapp.com/login.php");
         }
         else { // Le mot de passe est érroné
-            header("location: http://localhost/MaxiSport/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
+            header("location: https://php-maxisport.herokuapp.com/login/newpassword.php?changepswd=true&passwordmismatch=true&login=$login");
         }       
     }
 
@@ -223,5 +223,5 @@ else if (isset($_GET["changepasswordsubmit"])) {
 
 }
 else {
-    header("location: http://localhost/MaxiSport/index.php");
+    header("location: https://php-maxisport.herokuapp.com/index.php");
 }

@@ -26,21 +26,21 @@
     <!-- Menu de navigation classique -->
 
     <nav class="navbar">
-      <a href="http://localhost/MaxiSport/index.php" class="logo">MaxiSport</a>
+      <a href="https://php-maxisport.herokuapp.com/index.php" class="logo">MaxiSport</a>
       
       <div class="navmenu">
         <ul>
-          <li id="home"><a href="http://localhost/MaxiSport/index.php">Accueil</a></li>
-          <li id="offers"><a href="http://localhost/MaxiSport/offers.php">Offres</a></li>
-          <li id="infos"><a href="http://localhost/MaxiSport/infos.php">Contact</a></li>
+          <li id="home"><a href="https://php-maxisport.herokuapp.com/index.php">Accueil</a></li>
+          <li id="offers"><a href="https://php-maxisport.herokuapp.com/offers.php">Offres</a></li>
+          <li id="infos"><a href="https://php-maxisport.herokuapp.com/infos.php">Contact</a></li>
           <?php 
 
           // Si l'utilisateur est connecté, le header se vois modifié
           if (isset($_SESSION["Level"])) {
-            echo '<li id="pannel"><a href="http://localhost/MaxiSport/pannel.php">Pannel</a></li>';
-            echo '<li id="logout"><a href="http://localhost/MaxiSport/login/Logout.php">Deconnexion</a></li>';
+            echo '<li id="pannel"><a href="https://php-maxisport.herokuapp.com/pannel.php">Pannel</a></li>';
+            echo '<li id="logout"><a href="https://php-maxisport.herokuapp.com/login/Logout.php">Deconnexion</a></li>';
           } else {
-            echo '<li id="login"><a href="http://localhost/MaxiSport/login.php">Connexion</a></li>';
+            echo '<li id="login"><a href="https://php-maxisport.herokuapp.com/login.php">Connexion</a></li>';
           }
 
 
@@ -58,19 +58,19 @@
         <ul>
 
           <div class="navcontainer">
-          <li id="home"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/index.php">home</a></li>
+          <li id="home"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/index.php">home</a></li>
           
-          <li id="offers"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/offers.php">shopping_bag</a></li>
-          <li id="infos"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/infos.php">mail</a></li>
+          <li id="offers"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/offers.php">shopping_bag</a></li>
+          <li id="infos"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/infos.php">mail</a></li>
           <?php 
           
           // Si l'utilisateur est connecté, le header se vois modifié
           if (isset($_SESSION["Level"])) {
 
-            echo '<li id="pannel"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/pannel.php">settings</a></li>';
-            echo '<li id="logout"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/login/Logout.php">logout</a></li>';
+            echo '<li id="pannel"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/pannel.php">settings</a></li>';
+            echo '<li id="logout"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/login/Logout.php">logout</a></li>';
           } else {
-            echo '<li id="login"><a class="material-symbols-outlined navicon" href="http://localhost/MaxiSport/login.php">login</a></li>';
+            echo '<li id="login"><a class="material-symbols-outlined navicon" href="https://php-maxisport.herokuapp.com/login.php">login</a></li>';
           }
 
 

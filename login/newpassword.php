@@ -24,7 +24,7 @@
                     <div class="logintext">
                         <h1>Changement de mot de passe</h1>
                     </div>
-                    <form class="login-form" action="http://localhost/MaxiSport/authentification.php" method="get">
+                    <form class="login-form" action="https://php-maxisport.herokuapp.com/authentification.php" method="get">
                         <br>
                         <?php 
                             if (isset($_GET['passwordmismatch'])) {

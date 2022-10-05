@@ -30,7 +30,7 @@ if ($numRows == 0) {
                     <div class="logintext">
                         <h1>Création du profil administrateur</h1>
                     </div>
-                    <form class="login-form" action="http://localhost/MaxiSport/authentification.php" method="get">
+                    <form class="login-form" action="https://php-maxisport.herokuapp.com/authentification.php" method="get">
                         <br>
                         <?php 
                             if (isset($_GET['passwordmismatch'])) {

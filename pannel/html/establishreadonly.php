@@ -195,6 +195,6 @@ if (isset($_SESSION["Level"])) {
     }
 }
 
-else {session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+else {session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
 

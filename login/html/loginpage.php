@@ -10,7 +10,7 @@
             <div class="logintext">
                 <h1>Connexion</h1>
             </div>
-            <form class="login-form" action="http://localhost/MaxiSport/authentification.php" method="post">
+            <form class="login-form" action="https://php-maxisport.herokuapp.com/authentification.php" method="post">
                 <?php
                 if (isset($_GET['error'])) {
                             

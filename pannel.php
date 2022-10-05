@@ -22,7 +22,7 @@
       if ($_SESSION["Level"] === 'Establish') {include 'pannel/html/establishreadonly.php';}
 
     }
-    else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+    else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
     include 'htmlbase/footer.html';
   

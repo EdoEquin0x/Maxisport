@@ -24,8 +24,8 @@ if ($_SESSION["level"] = 'Admin') {
                     <h1>Gestionnaire de franchises</h1>
 
                     <div class="upperblock">
-                        <a class="cancelcontainer" href="http://localhost/MaxiSport/pannel.php"><<</a>
-                        <a class="createbutton" href="http://localhost/MaxiSport/pannel/html/createform.php?createwhat=franchise">Créer une franchise</a>
+                        <a class="cancelcontainer" href="https://php-maxisport.herokuapp.com/pannel.php"><<</a>
+                        <a class="createbutton" href="https://php-maxisport.herokuapp.com/pannel/html/createform.php?createwhat=franchise">Créer une franchise</a>
                         <form class="searchbarblock" action="#" method="get">
                             <input class="searchbar" type="text" name="searchbar" title="Search" id="searchbar" placeholder="Rechercher...">
                             <button type="submit"><p id="searchicon" class="material-symbols-outlined">search</p></button>
@@ -179,5 +179,5 @@ if ($_SESSION["level"] = 'Admin') {
 <?php 
 
 }
-else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
     ?>

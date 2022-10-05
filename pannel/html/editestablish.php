@@ -33,7 +33,7 @@ if (isset($_SESSION["Level"])) {
                         <div class="pannelcheckfranchise">
                             <div class="pannelmainblock">
                                 <br/>
-                                    <a class="backbutton" href="http://localhost/MaxiSport/establishlisting.php"><<</a>
+                                    <a class="backbutton" href="https://php-maxisport.herokuapp.com/establishlisting.php"><<</a>
                                 <br/>
                                 <div class="pannelpicture">    
                                     <img class="franchiseimg" width="384" height="384" src="<?php echo "$establish->imgurl"; ?>" alt="Error Loading Img"></img>
@@ -249,11 +249,11 @@ if (isset($_SESSION["Level"])) {
         <?php
         
     }
-    else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+    else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
 }
 
-else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
 include '../../htmlbase/footer.html';
 

@@ -73,7 +73,7 @@ if ($_SESSION["Level"] = 'Admin') {
                 
                     }
                 endforeach;
-                header ('location: http://localhost/MaxiSport/franchiselisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/franchiselisting.php');
 
              
 
@@ -113,7 +113,7 @@ if ($_SESSION["Level"] = 'Admin') {
             }
             else if ($_GET['action'] === "cancel") {
                 $franchiseid = $_GET['franchiseid'];
-                header ('location: http://localhost/MaxiSport/franchiselisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/franchiselisting.php');
             }
         }
         else { ?>
@@ -181,7 +181,7 @@ if ($_SESSION["Level"] = 'Admin') {
                         $auth->prepare($request)->execute([$value, $establishId]);
                     }
                 endforeach;
-                header ('location: http://localhost/MaxiSport/establishlisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/establishlisting.php');
 
              
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
@@ -215,7 +215,7 @@ if ($_SESSION["Level"] = 'Admin') {
             }
             else if ($_GET['action'] === "cancel") {
                 $franchiseid = $_GET['franchiseid'];
-                header ('location: http://localhost/MaxiSport/establishlisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/establishlisting.php');
             }
         }
         else { ?>
@@ -265,7 +265,7 @@ if ($_SESSION["Level"] = 'Admin') {
             
                 $request = "DELETE FROM establish WHERE establishId=? AND establishName=?";
                 $auth->prepare($request)->execute([$establishId, $establishName]);
-                header ('location: http://localhost/MaxiSport/establishlisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/establishlisting.php');
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
@@ -299,7 +299,7 @@ if ($_SESSION["Level"] = 'Admin') {
             }
             else if ($_GET['action'] === "cancel") {
                 $franchiseid = $_GET['franchiseid'];
-                header ('location: http://localhost/MaxiSport/establishlisting.php');
+                header ('location: https://php-maxisport.herokuapp.com/establishlisting.php');
             }
         }
         else { 
@@ -350,7 +350,7 @@ if ($_SESSION["Level"] = 'Admin') {
                 $request2 = "DELETE FROM establish WHERE franchiseId=?";
                 $auth->prepare($request)->execute([$franchiseId, $franchiseName]);
                 $auth->prepare($request2)->execute([$franchiseId]);
-                header("location: http://localhost/MaxiSport/franchiselisting.php"); //Rediriger vers le pannel des établissements
+                header("location: https://php-maxisport.herokuapp.com/franchiselisting.php"); //Rediriger vers le pannel des établissements
 
         
 
@@ -384,7 +384,7 @@ if ($_SESSION["Level"] = 'Admin') {
             }
             else if ($_GET['action'] === "cancel") {
                 $franchiseid = $_GET['franchiseid'];
-                header("location: http://localhost/MaxiSport/franchiselisting.php"); //Rediriger vers le pannel des établissements
+                header("location: https://php-maxisport.herokuapp.com/franchiselisting.php"); //Rediriger vers le pannel des établissements
             }
         }
         else { 
@@ -457,7 +457,7 @@ if ($_SESSION["Level"] = 'Admin') {
     if (isset($_GET['franchisecreationsubmit'])) {
         if (isset($_GET['action'])) {
             if ($_GET['action'] === "confirm") {
-                header ('location: http://localhost/MaxiSport/franchiselisting.php'); //Rediriger vers le pannel des franchises
+                header ('location: https://php-maxisport.herokuapp.com/franchiselisting.php'); //Rediriger vers le pannel des franchises
 
                 $parameters = array("franchiseEnabled", "permNewsletter", "permDrink", "permProm", "permAutorenewal", "permWebintegration");
                 foreach ($parameters as $parameter) {
@@ -539,7 +539,7 @@ if ($_SESSION["Level"] = 'Admin') {
             }
                 else if ($_GET['action'] === "cancel") {
                     
-                    header ('location: http://localhost/MaxiSport/pannel/html/createform.php?createwhat=franchise');
+                    header ('location: https://php-maxisport.herokuapp.com/pannel/html/createform.php?createwhat=franchise');
                 }
         }
         else { 
@@ -614,7 +614,7 @@ if ($_SESSION["Level"] = 'Admin') {
                 $registerestablish = "INSERT INTO establish (establishEnabled, establishName, establishLogin, establishWebsite, establishphone, ownerphone, address, franchiseId, imgurl, establishPswd, city, zipcode) VALUES ('true', '$establishName', '$establishLogin', '$establishWebsite', '$establishphone', '$ownerphone', '$address', '$whatfranchiseid1', '$imgurl', '$establishPswd', '$city', '$zipcode')";
                 $establishreg = $auth->prepare($registerestablish);
                 $establishreg->execute();
-                header("location: http://localhost/MaxiSport/pannel.php"); //Rediriger vers le pannel des établissements
+                header("location: https://php-maxisport.herokuapp.com/pannel.php"); //Rediriger vers le pannel des établissements
 
 
 
@@ -622,7 +622,7 @@ if ($_SESSION["Level"] = 'Admin') {
                 }
                 else if ($_GET['action'] === "cancel") {
                     
-                    header ('location: http://localhost/MaxiSport/pannel/html/createform.php?createwhat=establish');
+                    header ('location: https://php-maxisport.herokuapp.com/pannel/html/createform.php?createwhat=establish');
                 }
 
 
@@ -842,4 +842,4 @@ if ($_SESSION["Level"] = 'Admin') {
 
 <?php
 }
-else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}

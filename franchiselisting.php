@@ -10,7 +10,7 @@
     if (isset($_SESSION["Level"])) {
       if ($_SESSION["Level"] === 'Admin') {include 'pannel/html/franchiselisting.php';}
     }
-    else {session_start(); session_unset(); session_destroy(); header ('location: http://localhost/MaxiSport/index.php');}
+    else {session_start(); session_unset(); session_destroy(); header ('location: https://php-maxisport.herokuapp.com/index.php');}
 
     include 'htmlbase/footer.html';
   
