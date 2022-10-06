@@ -48,8 +48,8 @@ if ($_SESSION["level"] = 'Admin') {
                     <?php
                     
                     foreach($objs as $obj): 
-                        if ($obj->franchiseEnabled === "1") {$statut="active";}
-                        if ($obj->franchiseEnabled === "0") {$statut="disabled";}
+                        if ($obj->franchiseEnabled == "1") {$statut="active";}
+                        if ($obj->franchiseEnabled == "0") {$statut="disabled";}
                         ?>
                             
                             <div class="franchiseblock <?php echo $statut;?>">
@@ -124,8 +124,8 @@ if ($_SESSION["level"] = 'Admin') {
                 echo '<p class="Nofound"> Aucun résultat </p>';
             }
             foreach($searchresults as $searchresult): 
-                if ($searchresult->franchiseEnabled === "1") {$statut="active";}
-                if ($searchresult->franchiseEnabled === "0") {$statut="disabled";}
+                if ($searchresult->franchiseEnabled == "1") {$statut="active";}
+                if ($searchresult->franchiseEnabled == "0") {$statut="disabled";}
                 ?>
                     
                     <div class="franchiseblocksearched <?php echo $statut;?>">
