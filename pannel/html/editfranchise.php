@@ -253,8 +253,8 @@
                         <?php
                         // Bloc contenant toutes les infos de l'établissement rattaché à la franchise, grâce à une loop chaque établissement est généré l'un après l'autre
                         foreach($establishlist as $establish): 
-                            if ($establish->establishEnabled === "1") {$statut="active";}
-                            if ($establish->establishEnabled === "0") {$statut="disabled";}
+                            if ($establish->establishEnabled == "1") {$statut="active";}
+                            if ($establish->establishEnabled == "0") {$statut="disabled";}
                             ?>
                                 
                                 <div class="establishblock <?php echo $statut;?>">
