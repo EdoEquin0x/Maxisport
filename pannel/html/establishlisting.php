@@ -47,8 +47,8 @@ if ($_SESSION["Level"] = 'Admin') {
                     <?php
                     
                     foreach($objs as $obj): 
-                        if ($obj->establishEnabled === "1") {$statut="active";}
-                        if ($obj->establishEnabled === "0") {$statut="disabled";}
+                        if ($obj->establishEnabled == "1") {$statut="active";}
+                        if ($obj->establishEnabled == "0") {$statut="disabled";}
                         ?>
                             
                             <div class="establishblock <?php echo $statut;?>">
@@ -130,8 +130,8 @@ if ($_SESSION["Level"] = 'Admin') {
                 echo '<p class="Nofound"> Aucun résultat </p>';
             }
             foreach($searchresults as $searchresult): 
-                if ($searchresult->establishEnabled === "1") {$statut="active";}
-                if ($searchresult->establishEnabled === "0") {$statut="disabled";}
+                if ($searchresult->establishEnabled == "1") {$statut="active";}
+                if ($searchresult->establishEnabled == "0") {$statut="disabled";}
                 ?>
                     
                     <div class="establishblocksearched <?php echo $statut;?>">
