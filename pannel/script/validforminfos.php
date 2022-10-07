@@ -79,7 +79,7 @@ if ($_SESSION["Level"] = 'Admin') {
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
-                $to = "nicolasbourgoisbrg@gmail.com";
+                $to = $franchiseLogin;
                 $subject = 'Modification de votre franchise';
 
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
@@ -264,12 +264,16 @@ if ($_SESSION["Level"] = 'Admin') {
 
             
                 $request = "DELETE FROM establish WHERE establishId=? AND establishName=?";
+				$request2 = "SELECT establishLogin FROM establish WHERE establishId=?";
+				$request3 = "SELECT franchiseLogin FROM franchise WHERE franchiseid=?";
                 $auth->prepare($request)->execute([$establishId, $establishName]);
+				$emailestablish = $auth->prepare($request2)->execute([$establishId]);
+				$franchiseestablish = $auth->prepare($request3)->execute([$franchiseid]);
                 header ('location: https://php-maxisport.herokuapp.com/establishlisting.php');
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
-                $to = "nicolasbourgoisbrg@gmail.com";
+                $to = $emailestablish;
                 $subject = 'Suppression de votre établissement';
 
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
@@ -291,6 +295,39 @@ if ($_SESSION["Level"] = 'Admin') {
 
                 // On envoie le mail 
                 mail($to, $subject, $message, implode("\r\n", $headers));
+
+
+
+				// On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
+                // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
+                $to = $franchiseestablish;
+                $subject = 'Suppression d\'un de vos établissements';
+
+                // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
+                $headers[] = "MIME-Version: 1.0" . "rn";
+                $headers[] = 'Content-type: text/html; charset=iso-8859-1' . "rn";
+
+                // On défini le contenu du mail
+                $message = '
+                <body style="background-color: #333; border-radius: 10px; justify-content: center;">
+                    <h2 style="text-align: center; font-size: 5em; color:rgb(157, 235, 63); font-weight: 900;">Maxisport</h2>
+                    <h3 style="text-align: center; font-size: 3em; color:gray;">Aurevoir</h3>
+                    <div style="margin-left: 10%; text-align: center; font-size: 2em; max-width: 80%; color:white; border: 2px solid rgba(218, 218, 218, 0.781); border-radius: 15px; margin-bottom: 10%;">
+                        <p>Bonjour un de vos établissement à été supprimée de nos bases de données.</p>
+                        <p>Si vous pensez qu\'il s\'agis d\'une erreur, veuillez contacter notre service technique.</p>
+                    </div>
+                    <br />
+                </body>
+                ';
+
+                // On envoie le mail 
+                mail($to, $subject, $message, implode("\r\n", $headers));
+
+
+
+
+
+
 
 
 
@@ -348,15 +385,17 @@ if ($_SESSION["Level"] = 'Admin') {
             
                 $request = "DELETE FROM franchise WHERE franchiseId=? AND franchiseName=?";
                 $request2 = "DELETE FROM establish WHERE franchiseId=?";
+				$requet3 = "SELECT franchiseLogin WHERE franchiseId=?";
                 $auth->prepare($request)->execute([$franchiseId, $franchiseName]);
                 $auth->prepare($request2)->execute([$franchiseId]);
+				$email = $auth->prepare($requet3)->execute([$franchiseId]);
                 header("location: https://php-maxisport.herokuapp.com/franchiselisting.php"); //Rediriger vers le pannel des établissements
 
         
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
-                $to = "nicolasbourgoisbrg@gmail.com";
+                $to = $email;
                 $subject = 'Suppression de votre franchise';
 
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
@@ -500,7 +539,7 @@ if ($_SESSION["Level"] = 'Admin') {
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
-                $to = "nicolasbourgoisbrg@gmail.com";
+                $to = $franchiseLogin;
                 $subject = 'Bienvenue chez Maxisport!';
 
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
@@ -628,7 +667,7 @@ if ($_SESSION["Level"] = 'Admin') {
 
                 // On défini le receveur et l'objet du mail, pour mes test j'ai inséré mon email, vous pouvez prendre le soin de mettre la votre si vous
                 // souhaitez tester cette fonctionnalité, dans un environement de production on aurait pu y récupérer et y mettre l'email du concerné
-                $to = "nicolasbourgoisbrg@gmail.com";
+                $to = $establishLogin;
                 $subject = 'Bienvenue chez Maxisport!';
 
                 // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini (récupéré sur la docu officielle de PHP)
